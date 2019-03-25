@@ -1,0 +1,1069 @@
+2019-03-25 12:24:47.694+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] No locking implementation specified, defaulting to 'community'
+2019-03-25 12:24:47.743+0000 INFO  [o.n.k.AvailabilityGuard] Requirement makes database unavailable: Database available
+2019-03-25 12:24:47.748+0000 INFO  [o.n.k.i.DiagnosticsManager] --- INITIALIZED diagnostics START ---
+2019-03-25 12:24:47.748+0000 INFO  [o.n.k.i.DiagnosticsManager] Neo4j Kernel properties:
+2019-03-25 12:24:47.748+0000 INFO  [o.n.k.i.DiagnosticsManager] ephemeral=false
+2019-03-25 12:24:47.748+0000 INFO  [o.n.k.i.DiagnosticsManager] edition=Community
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.allow_format_migration=true
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] keep_logical_logs=false
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.enabled=true
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] allow_store_upgrade=true
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] Diagnostics providers:
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] org.neo4j.kernel.configuration.Config
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] org.neo4j.kernel.info.DiagnosticsManager
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] SYSTEM_MEMORY
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] JAVA_MEMORY
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] OPERATING_SYSTEM
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] JAVA_VIRTUAL_MACHINE
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] CLASSPATH
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] LIBRARY_PATH
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] SYSTEM_PROPERTIES
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] NETWORK
+2019-03-25 12:24:47.749+0000 INFO  [o.n.k.i.DiagnosticsManager] System memory information:
+2019-03-25 12:24:47.751+0000 INFO  [o.n.k.i.DiagnosticsManager] Total Physical memory: 31,38 GB
+2019-03-25 12:24:47.752+0000 INFO  [o.n.k.i.DiagnosticsManager] Free Physical memory: 23,71 GB
+2019-03-25 12:24:47.752+0000 INFO  [o.n.k.i.DiagnosticsManager] Committed virtual memory: 980,41 MB
+2019-03-25 12:24:47.752+0000 INFO  [o.n.k.i.DiagnosticsManager] Total swap space: 36,13 GB
+2019-03-25 12:24:47.752+0000 INFO  [o.n.k.i.DiagnosticsManager] Free swap space: 20,07 GB
+2019-03-25 12:24:47.752+0000 INFO  [o.n.k.i.DiagnosticsManager] JVM memory information:
+2019-03-25 12:24:47.752+0000 INFO  [o.n.k.i.DiagnosticsManager] Free  memory: 400,59 MB
+2019-03-25 12:24:47.752+0000 INFO  [o.n.k.i.DiagnosticsManager] Total memory: 564,50 MB
+2019-03-25 12:24:47.752+0000 INFO  [o.n.k.i.DiagnosticsManager] Max   memory: 3,56 GB
+2019-03-25 12:24:47.754+0000 INFO  [o.n.k.i.DiagnosticsManager] Garbage Collector: PS Scavenge: [PS Eden Space, PS Survivor Space]
+2019-03-25 12:24:47.754+0000 INFO  [o.n.k.i.DiagnosticsManager] Garbage Collector: PS MarkSweep: [PS Eden Space, PS Survivor Space, PS Old Gen]
+2019-03-25 12:24:47.754+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Code Cache (Non-heap memory): committed=15,25 MB, used=15,15 MB, max=240,00 MB, threshold=0,00 B
+2019-03-25 12:24:47.754+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Metaspace (Non-heap memory): committed=36,13 MB, used=35,16 MB, max=-1,00 B, threshold=0,00 B
+2019-03-25 12:24:47.754+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Compressed Class Space (Non-heap memory): committed=4,88 MB, used=4,64 MB, max=1,00 GB, threshold=0,00 B
+2019-03-25 12:24:47.755+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: PS Eden Space (Heap memory): committed=166,00 MB, used=136,49 MB, max=1,29 GB, threshold=?
+2019-03-25 12:24:47.755+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: PS Survivor Space (Heap memory): committed=21,00 MB, used=0,00 B, max=21,00 MB, threshold=?
+2019-03-25 12:24:47.755+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: PS Old Gen (Heap memory): committed=377,50 MB, used=27,41 MB, max=2,67 GB, threshold=0,00 B
+2019-03-25 12:24:47.755+0000 INFO  [o.n.k.i.DiagnosticsManager] Operating system information:
+2019-03-25 12:24:47.755+0000 INFO  [o.n.k.i.DiagnosticsManager] Operating System: Windows 10; version: 10.0; arch: amd64; cpus: 8
+2019-03-25 12:24:47.770+0000 INFO  [o.n.k.i.DiagnosticsManager] Process id: 4780@5CG8366SRV
+2019-03-25 12:24:47.770+0000 INFO  [o.n.k.i.DiagnosticsManager] Byte order: LITTLE_ENDIAN
+2019-03-25 12:24:47.771+0000 INFO  [o.n.k.i.DiagnosticsManager] Local timezone: Europe/Berlin
+2019-03-25 12:24:47.771+0000 INFO  [o.n.k.i.DiagnosticsManager] JVM information:
+2019-03-25 12:24:47.771+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Name: Java HotSpot(TM) 64-Bit Server VM
+2019-03-25 12:24:47.771+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Vendor: Oracle Corporation
+2019-03-25 12:24:47.771+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Version: 25.191-b12
+2019-03-25 12:24:47.771+0000 INFO  [o.n.k.i.DiagnosticsManager] JIT compiler: HotSpot 64-Bit Tiered Compilers
+2019-03-25 12:24:47.771+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Arguments: [-Xmx4096m, -Dclassworlds.conf=C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..\bin\m2.conf, -Dmaven.home=C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\.., -Dlibrary.jansi.path=C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..\lib\jansi-native, -Dmaven.multiModuleProjectDirectory=C:\workspaces\vsfmigrering\exjobb]
+2019-03-25 12:24:47.771+0000 INFO  [o.n.k.i.DiagnosticsManager] Java classpath:
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/yaml/1.3/yaml-1.3.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.12/FastInfoset-1.2.12.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/jruby-stdlib/9.1.7.0/jruby-stdlib-9.1.7.0.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/tycho-packaging-plugin/0.23.1/tycho-packaging-plugin-0.23.1.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/junit/1.3/junit-1.3.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/common/1.3/common-1.3.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.impl/0.8.1/xo.impl-0.8.1.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\jfr.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-webapp/9.2.9.v20150224/jetty-webapp-9.2.9.v20150224.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/headius/options/1.4/options-1.4.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-codegen/2.3.10/neo4j-codegen-2.3.10.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-server/9.2.9.v20150224/jetty-server-9.2.9.v20150224.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/org.eclipse.osgi/3.10.100.v20150529-1857/org.eclipse.osgi-3.10.100.v20150529-1857.jar
+2019-03-25 12:24:47.785+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-kernel/2.3.10/neo4j-kernel-2.3.10-tests.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/maven3/1.3/maven3-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-consistency-check/2.3.10/neo4j-consistency-check-2.3.10.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-xml/9.2.9.v20150224/jetty-xml-9.2.9.v20150224.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-shell/2.3.10/neo4j-shell-2.3.10.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-consistency-check-legacy/2.3.10/neo4j-consistency-check-legacy-2.3.10.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/tycho-metadata-model/0.23.1/tycho-metadata-model-0.23.1.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/asciidoctor-utilities/1.3.0/asciidoctor-utilities-1.3.0-rules2asciidoc-v2.xsl
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-io/2.3.10/neo4j-io-2.3.10-tests.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/xml/bind/jaxb-impl/2.2.8-b01/jaxb-impl-2.2.8-b01.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/xml/1.3/xml-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\jsse.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/common/1.3/common-1.3-tests.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/io/netty/netty-all/4.0.28.Final/netty-all-4.0.28.Final.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/asciidoctor/asciidoctorj/1.5.4.1/asciidoctorj-1.5.4.1.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/sonatype/sisu/sisu-guice/3.2.3/sisu-guice-3.2.3-no_aop.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-udc/2.3.10/neo4j-udc-2.3.10.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/bouncycastle/bcpkix-jdk15on/1.52/bcpkix-jdk15on-1.52.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-http/9.2.9.v20150224/jetty-http-9.2.9.v20150224.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/de/pdark/decentxml/1.3/decentxml-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j/2.3.10/neo4j-2.3.10.pom
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/rrd4j/rrd4j/2.2/rrd4j-2.2.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/driver/neo4j-java-driver/1.2.0/neo4j-java-driver-1.2.0.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/json/1.3/json-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/joni/joni/2.1.11/joni-2.1.11.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/jpa2/1.3/jpa2-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-posix/3.0.33/jnr-posix-3.0.33.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.neo4j.embedded/0.8.1/xo.neo4j.embedded-0.8.1.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/osgi/1.3/osgi-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/org.eclipse.osgi.compatibility.state/1.0.100.v20150402-1551/org.eclipse.osgi.compatibility.state-1.0.100.v20150402-1551.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/concurrentlinkedhashmap-lru-1.4.2.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/tycho/1.3/tycho-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/yaml/snakeyaml/1.16/snakeyaml-1.16.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/jaxrs/1.3/jaxrs-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/java8/1.3/java8-1.3.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/org.eclipse.tycho.embedder.shared/0.23.1/org.eclipse.tycho.embedder.shared-0.23.1.jar
+2019-03-25 12:24:47.787+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher-compiler-2.2_2.11/2.2.10/neo4j-cypher-compiler-2.2_2.11-2.2.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/javaee6/1.3/javaee6-1.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\rt.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/app/neo4j-server/2.3.10/neo4j-server-2.3.10-static-web.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/oro/oro/2.0.8/oro-2.0.8.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\charsets.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-digester/commons-digester/1.6/commons-digester-1.6.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jffi/1.2.14/jffi-1.2.14-native.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/jersey/jersey-core/1.19/jersey-core-1.19.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/jersey/contribs/jersey-multipart/1.19/jersey-multipart-1.19.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j/2.3.10/neo4j-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-util/9.2.9.v20150224/jetty-util-9.2.9.v20150224.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/jqassistant-maven-plugin/1.3.0/jqassistant-maven-plugin-1.3.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/parboiled/parboiled-scala_2.11/1.1.7/parboiled-scala_2.11-1.1.7.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\jce.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/sisu-equinox-api/0.23.1/sisu-equinox-api-0.23.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-constants/0.9.6/jnr-constants-0.9.6.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/googlecode/slf4j-maven-plugin-log/slf4j-maven-plugin-log/1.0.0/slf4j-maven-plugin-log-1.0.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-io/9.2.9.v20150224/jetty-io-9.2.9.v20150224.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath] C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\boot\plexus-classworlds-2.5.2.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-primitive-collections/2.3.10/neo4j-primitive-collections-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-servlet/9.2.9.v20150224/jetty-servlet-9.2.9.v20150224.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/graphml/1.3/graphml-1.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/jersey/jersey-server/1.19/jersey-server-1.19.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jvnet/mimepull/mimepull/1.9.3/mimepull-1.9.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-kernel/2.3.10/neo4j-kernel-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-lucene-index/2.3.10/neo4j-lucene-index-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\resources.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/istack/istack-commons-runtime/2.16/istack-commons-runtime-2.16.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.4/scala-parser-combinators_2.11-1.0.4.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/app/neo4j-server/2.3.10/neo4j-server-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-unsafe/2.3.10/neo4j-unsafe-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-netdb/1.1.6/jnr-netdb-1.1.6.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-csv/2.3.10/neo4j-csv-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/headius/invokebinder/1.7/invokebinder-1.7.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher/2.3.10/neo4j-cypher-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/app/neo4j-browser/2.3.10/neo4j-browser-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/testng/1.3/testng-1.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/dirgra/0.3/dirgra-0.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/org.eclipse.tycho.core.shared/0.23.1/org.eclipse.tycho.core.shared-0.23.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.neo4j.spi/0.8.1/xo.neo4j.spi-0.8.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/xml/bind/jaxb-core/2.2.8-b01/jaxb-core-2.2.8-b01.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\classes
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/jruby-core/9.1.7.0/jruby-core-9.1.7.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.neo4j.remote/0.8.1/xo.neo4j.remote-0.8.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-jmx/2.3.10/neo4j-jmx-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/extras/bytelist/1.0.13/bytelist-1.0.13.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/scanner/1.3.0/scanner-1.3.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-logging/2.3.10/neo4j-logging-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-graph-matching/2.3.10/neo4j-graph-matching-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/report/1.3.0/report-1.3.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/shared/1.3.0/shared-1.3.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/google/guava/guava/18.0/guava-18.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/jcodings/jcodings/1.0.18/jcodings-1.0.18.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/store/1.3.0/store-1.3.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/plugin/1.3.0/plugin-1.3.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher-compiler-2.3/2.3.10/neo4j-cypher-compiler-2.3-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/tycho-embedder-api/0.23.1/tycho-embedder-api-0.23.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/cdi/1.3/cdi-1.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/tycho-core/0.23.1/tycho-core-0.23.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-unixsocket/0.15/jnr-unixsocket-0.15.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/server-api/2.3.10/server-api-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/junit/junit/3.8.1/junit-3.8.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/rdbms/1.3/rdbms-1.3.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm-tree/5.2/asm-tree-5.2.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.api/0.8.1/xo.api-0.8.1.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/jersey/jersey-servlet/1.19/jersey-servlet-1.19.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-io/2.3.10/neo4j-io-2.3.10.jar
+2019-03-25 12:24:47.788+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-io/commons-io/2.4/commons-io-2.4.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/joda-time/joda-time/2.8.2/joda-time-2.8.2.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm-commons/5.2/asm-commons-5.2.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.0.M1/org.eclipse.sisu.inject-0.3.0.M1.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/rule/1.3.0/rule-1.3.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/3rdparty/javax/ws/rs/jsr311-api/1.1.2.r612/jsr311-api-1.1.2.r612.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-security/9.2.9.v20150224/jetty-security-9.2.9.v20150224.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/java/1.3/java-1.3.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jffi/1.2.14/jffi-1.2.14.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-graph-algo/2.3.10/neo4j-graph-algo-2.3.10.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/neo4jserver.neo4jv2/1.3.0/neo4jserver.neo4jv2-1.3.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher-frontend-2.3/2.3.10/neo4j-cypher-frontend-2.3-2.3.10.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/jline/jline/2.12/jline-2.12.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/commons/commons-compress/1.10/commons-compress-1.10.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/javax/xml/bind/jaxb-api/2.2.9/jaxb-api-2.2.9.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/sisu-equinox-embedder/0.23.1/sisu-equinox-embedder-0.23.1.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm-analysis/5.2/asm-analysis-5.2.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/bouncycastle/bcprov-jdk15on/1.52/bcprov-jdk15on-1.52.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.spi/0.8.1/xo.spi-0.8.1.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\sunrsasign.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-enxio/0.14/jnr-enxio-0.14.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/velocity/velocity/1.5/velocity-1.5.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/analysis/1.3.0/analysis-1.3.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/beust/jcommander/1.35/jcommander-1.35.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/martiansoftware/nailgun-server/0.9.1/nailgun-server-0.9.1.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher-compiler-1.9_2.11/2.0.5/neo4j-cypher-compiler-1.9_2.11-2.0.5.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/neo4jserver.embedded/1.3.0/neo4jserver.embedded-1.3.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/neo4jserver.bootstrap/1.3.0/neo4jserver.bootstrap-1.3.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-function/2.3.10/neo4j-function-2.3.10.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.neo4j.api/0.8.1/xo.neo4j.api-0.8.1.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm-util/5.2/asm-util-5.2.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/asciidoctor-utilities/1.3.0/asciidoctor-utilities-1.3.0-plugin2asciidoc.xsl
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm/5.2/asm-5.2.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/ejb3/1.3/ejb3-1.3.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/headius/unsafe-fences/1.0/unsafe-fences-1.0.jar
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager] Library path:
+2019-03-25 12:24:47.789+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\bin
+2019-03-25 12:24:47.790+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\Sun\Java\bin
+2019-03-25 12:24:47.790+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\System32
+2019-03-25 12:24:47.790+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows
+2019-03-25 12:24:47.790+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\bin
+2019-03-25 12:24:47.791+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin
+2019-03-25 12:24:47.791+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Utvpgm\vsfmigrering\Subversion\bin
+2019-03-25 12:24:47.792+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+2019-03-25 12:24:47.792+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\System32
+2019-03-25 12:24:47.792+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows
+2019-03-25 12:24:47.793+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\System32\wbem
+2019-03-25 12:24:47.793+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\System32\WindowsPowerShell\v1.0
+2019-03-25 12:24:47.794+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\Plantronics\Spokes3G
+2019-03-25 12:24:47.794+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\CA\Gen85\Gen
+2019-03-25 12:24:47.795+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Users\CSN8030\AppData\Local\Microsoft\WindowsApps
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\workspaces\vsfmigrering\exjobb
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\workspaces\vsfmigrering\exjobb
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] System.properties:
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.boot.library.path = C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\bin
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] maven.multiModuleProjectDirectory = C:\workspaces\vsfmigrering\exjobb
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] guice.disable.misplaced.annotation.check = true
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] path.separator = ;
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] file.encoding.pkg = sun.io
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] user.country = SE
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] user.script = 
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.java.launcher = SUN_STANDARD
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.os.patch.level = 
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] user.dir = C:\workspaces\vsfmigrering\exjobb
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] user.variant = 
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] classworlds.conf = C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..\bin\m2.conf
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.jnu.encoding = Cp1252
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] maven.conf = C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\../conf
+2019-03-25 12:24:47.796+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] library.jansi.path = C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..\lib\jansi-native
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] user.home = C:\Users\CSN8030
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] user.timezone = Europe/Berlin
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] file.encoding = Cp1252
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] user.name = CSN8030
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.java.command = org.codehaus.plexus.classworlds.launcher.Launcher clean install
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.arch.data.model = 64
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] user.language = sv
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] awt.toolkit = sun.awt.windows.WToolkit
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.stderr.encoding = cp850
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] maven.home = C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] file.separator = \
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.io.unicode.encoding = UnicodeLittle
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.cpu.endian = little
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.stdout.encoding = cp850
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.desktop = windows
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.cpu.isalist = amd64
+2019-03-25 12:24:47.797+0000 INFO  [o.n.k.i.DiagnosticsManager] Network information:
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Software Loopback Interface 1:
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 127.0.0.1
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 0:0:0:0:0:0:0:1
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64:
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Teredo Tunneling Pseudo-Interface:
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 2001:0:2851:78dd:38e5:465:53e5:bd31
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:38e5:465:53e5:bd31%net0
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Bluetooth Device (RFCOMM Protocol TDI):
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter:
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:8c2:2954:cb07:d52b%wlan0
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Bluetooth Device (Personal Area Network):
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:406f:a5dc:8084:4e3a%eth1
+2019-03-25 12:24:47.846+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 172.26.66.206
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:d0a5:229b:7417:941f%eth2
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:f9b0:4675:ba50:e287%wlan1
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Kernel Debug Network Adapter:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM-WFP Native MAC Layer LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-TM NDIS Sample LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM-QoS Packet Scheduler-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-WFP Native MAC Layer LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-Virtual WiFi Filter Driver-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-Native WiFi Filter Driver-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM-TM NDIS Sample LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-QoS Packet Scheduler-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-TM NDIS Sample LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2019-03-25 12:24:47.847+0000 INFO  [o.n.k.i.DiagnosticsManager] --- INITIALIZED diagnostics END ---
+2019-03-25 12:24:48.935+0000 INFO  [o.n.k.a.i.i.LuceneLabelScanStore] No lucene scan store index found, this might just be first use. Preparing to rebuild.
+2019-03-25 12:24:49.003+0000 INFO  [o.n.k.NeoStoreDataSource] Opened logical log [C:\workspaces\vsfmigrering\exjobb\target\jqassistant\store\neostore.transaction.db.0] version=0, lastTxId=1 (clean)
+2019-03-25 12:24:49.011+0000 WARN  [o.n.k.i.s.MetaDataStore] Missing counts store, rebuilding it.
+2019-03-25 12:24:49.089+0000 INFO  [o.n.k.a.i.i.LuceneLabelScanStore] Rebuilding lucene scan store, this may take a while
+2019-03-25 12:24:49.091+0000 INFO  [o.n.k.a.i.i.LuceneLabelScanStore] Lucene scan store rebuilt (roughly -1 nodes)
+2019-03-25 12:24:49.096+0000 INFO  [o.n.k.KernelHealth] Kernel health set to OK
+2019-03-25 12:24:49.219+0000 INFO  [o.n.k.AvailabilityGuard] Fulfilling of requirement makes database available: Database available
+2019-03-25 12:24:49.220+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] Database is now ready
+2019-03-25 12:24:49.221+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2019-03-25 12:24:49.221+0000 INFO  [o.n.k.i.DiagnosticsManager] Graph Database: Community StoreId{creationTime=1553516688720, randomId=4994342819918189792, storeVersion=15250506225055238, upgradeTime=1553516688720, upgradeId=1}
+2019-03-25 12:24:49.221+0000 INFO  [o.n.k.i.DiagnosticsManager] Kernel version: 2.3.10,ee54164393ec8984f4ef380f80016b4405f7a929
+2019-03-25 12:24:49.221+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] Store versions:
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] Store versions:
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] ArrayPropertyStore v0.A.6
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] NodeStore v0.A.6
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] StringPropertyStore v0.A.6
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] PropertyIndexStore v0.A.6
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] StringPropertyStore v0.A.6
+2019-03-25 12:24:49.223+0000 INFO  [o.n.k.i.DiagnosticsManager] ArrayPropertyStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] PropertyStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] RelationshipStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] StringPropertyStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] RelationshipTypeStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] StringPropertyStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] LabelTokenStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] SchemaStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] RelationshipGroupStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] NeoStore v0.A.6
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2019-03-25 12:24:49.224+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2019-03-25 12:24:49.225+0000 INFO  [o.n.k.i.DiagnosticsManager] Id usage:
+2019-03-25 12:24:49.225+0000 INFO  [o.n.k.i.DiagnosticsManager] Id usage:
+2019-03-25 12:24:49.225+0000 INFO  [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore v0.A.6: used=1 high=0
+2019-03-25 12:24:49.225+0000 INFO  [o.n.k.i.DiagnosticsManager]   NodeStore v0.A.6: used=0 high=-1
+2019-03-25 12:24:49.225+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.6: used=1 high=0
+2019-03-25 12:24:49.225+0000 INFO  [o.n.k.i.DiagnosticsManager]   PropertyIndexStore v0.A.6: used=0 high=-1
+2019-03-25 12:24:49.225+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.6: used=1 high=0
+2019-03-25 12:24:49.225+0000 INFO  [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore v0.A.6: used=1 high=0
+2019-03-25 12:24:49.226+0000 INFO  [o.n.k.i.DiagnosticsManager]   PropertyStore v0.A.6: used=0 high=-1
+2019-03-25 12:24:49.226+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipStore v0.A.6: used=0 high=-1
+2019-03-25 12:24:49.226+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.6: used=1 high=0
+2019-03-25 12:24:49.226+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipTypeStore v0.A.6: used=0 high=-1
+2019-03-25 12:24:49.226+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.6: used=1 high=0
+2019-03-25 12:24:49.226+0000 INFO  [o.n.k.i.DiagnosticsManager]   LabelTokenStore v0.A.6: used=0 high=-1
+2019-03-25 12:24:49.226+0000 INFO  [o.n.k.i.DiagnosticsManager]   SchemaStore v0.A.6: used=1 high=0
+2019-03-25 12:24:49.227+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipGroupStore v0.A.6: used=1 high=0
+2019-03-25 12:24:49.227+0000 INFO  [o.n.k.i.DiagnosticsManager]   NeoStore v0.A.6: used=15 high=14
+2019-03-25 12:24:49.227+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2019-03-25 12:24:49.227+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS START ---
+2019-03-25 12:24:49.227+0000 INFO  [o.n.k.i.DiagnosticsManager] Neostore records:
+2019-03-25 12:24:49.227+0000 INFO  [o.n.k.i.DiagnosticsManager] TIME (Creation time): 1553516688720
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] RANDOM_NUMBER (Random number for store id): 4994342819918189792
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] LOG_VERSION (Current log version): 0
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_ID (Last committed transaction): 1
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] STORE_VERSION (Store format version): 15250506225055238
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] FIRST_GRAPH_PROPERTY (First property record containing graph properties): -1
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CONSTRAINT_TRANSACTION (Last committed transaction containing constraint changes): 0
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_ID (Transaction id most recent upgrade was performed at): 1
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TIME (Time of last upgrade): 1553516688720
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_CHECKSUM (Checksum of last committed transaction): 0
+2019-03-25 12:24:49.228+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_CHECKSUM (Checksum of transaction id the most recent upgrade was performed at): 0
+2019-03-25 12:24:49.229+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_VERSION (Log version where the last transaction commit entry has been written into): 0
+2019-03-25 12:24:49.229+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET (Byte offset in the log file where the last transaction commit entry has been written into): 16
+2019-03-25 12:24:49.229+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_COMMIT_TIMESTAMP (Commit time timestamp for last committed transaction): 0
+2019-03-25 12:24:49.229+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_COMMIT_TIMESTAMP (Commit timestamp of transaction the most recent upgrade was performed at): 0
+2019-03-25 12:24:49.229+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS END ---
+2019-03-25 12:24:49.229+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE START ---
+2019-03-25 12:24:49.229+0000 INFO  [o.n.k.i.DiagnosticsManager] Transaction log:
+2019-03-25 12:24:49.230+0000 INFO  [o.n.k.i.DiagnosticsManager] No transactions found in any log
+2019-03-25 12:24:49.230+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE END ---
+2019-03-25 12:24:49.230+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2019-03-25 12:24:49.233+0000 INFO  [o.n.k.i.DiagnosticsManager] Disk space on partition (Total / Free / Free %): 511123124224 / 439334703104 / 85
+Storage files: (filename : modification date - size)
+2019-03-25 12:24:49.233+0000 INFO  [o.n.k.i.DiagnosticsManager]   index:
+2019-03-25 12:24:49.234+0000 INFO  [o.n.k.i.DiagnosticsManager]   - Total: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.234+0000 INFO  [o.n.k.i.DiagnosticsManager]   messages.log: 2019-03-25T13:24:47+0100 - 59,29 kB
+2019-03-25 12:24:49.234+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:24:49.235+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.counts.db.a: 2019-03-25T13:24:49+0100 - 96,00 B
+2019-03-25 12:24:49.235+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.235+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.236+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.236+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.names: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:24:49.236+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.names.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.237+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.237+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.237+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.labels: 2019-03-25T13:24:47+0100 - 8,00 kB
+2019-03-25 12:24:49.237+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.labels.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.238+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.238+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.arrays: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:24:49.238+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.arrays.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.239+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.239+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.239+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.240+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.keys: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:24:49.240+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.keys.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.240+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.strings: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:24:49.240+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.strings.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.241+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipgroupstore.db: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:24:49.241+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipgroupstore.db.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.241+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipstore.db: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.241+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipstore.db.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.242+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.242+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.242+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.names: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:24:49.242+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.names.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.243+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.schemastore.db: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:24:49.243+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.schemastore.db.id: 2019-03-25T13:24:48+0100 - 9,00 B
+2019-03-25 12:24:49.243+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.transaction.db.0: 2019-03-25T13:24:49+0100 - 16,00 B
+2019-03-25 12:24:49.243+0000 INFO  [o.n.k.i.DiagnosticsManager]   schema:
+2019-03-25 12:24:49.244+0000 INFO  [o.n.k.i.DiagnosticsManager]     label:
+2019-03-25 12:24:49.244+0000 INFO  [o.n.k.i.DiagnosticsManager]       lucene:
+2019-03-25 12:24:49.244+0000 INFO  [o.n.k.i.DiagnosticsManager]         write.lock: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.245+0000 INFO  [o.n.k.i.DiagnosticsManager]       - Total: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.245+0000 INFO  [o.n.k.i.DiagnosticsManager]     - Total: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.245+0000 INFO  [o.n.k.i.DiagnosticsManager]   - Total: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:24:49.245+0000 INFO  [o.n.k.i.DiagnosticsManager]   store_lock: 2019-03-25T13:24:47+0100 - 0,00 B
+2019-03-25 12:24:49.246+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2019-03-25 12:24:50.026+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:File(fileName) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.027+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:ColumnType(databaseType) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.027+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Project(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.027+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Type(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.028+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Concept(id) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.029+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Package(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.029+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Repository(url) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.056+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Artifact(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.058+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Pom(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.058+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Value(value) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.098+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.098+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.100+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.105+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.122+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Package(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.122+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:ColumnType(databaseType) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.122+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Value(value) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.123+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Concept(id) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.125+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.125+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.134+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Pom(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.134+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Artifact(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.135+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.135+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.143+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.143+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:File(fileName) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.144+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Project(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.151+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2019-03-25 12:24:50.152+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Type(fqn) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.158+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Repository(url) [provider: {key=lucene, version=1.0}]]
+2019-03-25 12:24:50.964+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 537ms.
+2019-03-25 12:24:52.525+0000 INFO  [o.n.k.i.f.GraphDatabaseFacade] Shutdown started
+2019-03-25 12:24:52.526+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] Database is now unavailable
+2019-03-25 12:24:52.736+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 107 to [C:\workspaces\vsfmigrering\exjobb\target\jqassistant\store\neostore.counts.db.b], from [C:\workspaces\vsfmigrering\exjobb\target\jqassistant\store\neostore.counts.db.a].
+2019-03-25 12:24:52.788+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 107 to [C:\workspaces\vsfmigrering\exjobb\target\jqassistant\store\neostore.counts.db.b], from [C:\workspaces\vsfmigrering\exjobb\target\jqassistant\store\neostore.counts.db.a].
+2019-03-25 12:24:52.808+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [107]:  Starting check pointing...
+2019-03-25 12:24:52.809+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [107]:  Starting store flush...
+2019-03-25 12:24:52.812+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [107]:  Store flush completed
+2019-03-25 12:24:52.812+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [107]:  Starting appending check point entry into the tx log...
+2019-03-25 12:24:52.813+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [107]:  Appending check point entry into the tx log completed
+2019-03-25 12:24:52.814+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [107]:  Check pointing completed
+2019-03-25 12:24:52.814+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2019-03-25 12:24:52.814+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2019-03-25 12:24:53.111+0000 INFO  [o.n.k.NeoStoreDataSource] NeoStores closed
+2019-03-25 12:24:53.111+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STOPPING diagnostics START ---
+2019-03-25 12:24:53.112+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STOPPING diagnostics END ---
+2019-03-25 12:25:05.416+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] No locking implementation specified, defaulting to 'community'
+2019-03-25 12:25:05.463+0000 INFO  [o.n.k.AvailabilityGuard] Requirement makes database unavailable: Database available
+2019-03-25 12:25:05.468+0000 INFO  [o.n.k.i.DiagnosticsManager] --- INITIALIZED diagnostics START ---
+2019-03-25 12:25:05.468+0000 INFO  [o.n.k.i.DiagnosticsManager] Neo4j Kernel properties:
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] ephemeral=false
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] edition=Community
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.allow_format_migration=true
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] keep_logical_logs=false
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.enabled=true
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] allow_store_upgrade=true
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] Diagnostics providers:
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] org.neo4j.kernel.configuration.Config
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] org.neo4j.kernel.info.DiagnosticsManager
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] SYSTEM_MEMORY
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] JAVA_MEMORY
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] OPERATING_SYSTEM
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] JAVA_VIRTUAL_MACHINE
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] CLASSPATH
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] LIBRARY_PATH
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] SYSTEM_PROPERTIES
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] NETWORK
+2019-03-25 12:25:05.469+0000 INFO  [o.n.k.i.DiagnosticsManager] System memory information:
+2019-03-25 12:25:05.471+0000 INFO  [o.n.k.i.DiagnosticsManager] Total Physical memory: 31,38 GB
+2019-03-25 12:25:05.471+0000 INFO  [o.n.k.i.DiagnosticsManager] Free Physical memory: 23,78 GB
+2019-03-25 12:25:05.471+0000 INFO  [o.n.k.i.DiagnosticsManager] Committed virtual memory: 750,25 MB
+2019-03-25 12:25:05.472+0000 INFO  [o.n.k.i.DiagnosticsManager] Total swap space: 36,13 GB
+2019-03-25 12:25:05.472+0000 INFO  [o.n.k.i.DiagnosticsManager] Free swap space: 20,31 GB
+2019-03-25 12:25:05.472+0000 INFO  [o.n.k.i.DiagnosticsManager] JVM memory information:
+2019-03-25 12:25:05.472+0000 INFO  [o.n.k.i.DiagnosticsManager] Free  memory: 207,86 MB
+2019-03-25 12:25:05.472+0000 INFO  [o.n.k.i.DiagnosticsManager] Total memory: 366,50 MB
+2019-03-25 12:25:05.472+0000 INFO  [o.n.k.i.DiagnosticsManager] Max   memory: 3,56 GB
+2019-03-25 12:25:05.473+0000 INFO  [o.n.k.i.DiagnosticsManager] Garbage Collector: PS Scavenge: [PS Eden Space, PS Survivor Space]
+2019-03-25 12:25:05.473+0000 INFO  [o.n.k.i.DiagnosticsManager] Garbage Collector: PS MarkSweep: [PS Eden Space, PS Survivor Space, PS Old Gen]
+2019-03-25 12:25:05.474+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Code Cache (Non-heap memory): committed=16,25 MB, used=16,18 MB, max=240,00 MB, threshold=0,00 B
+2019-03-25 12:25:05.474+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Metaspace (Non-heap memory): committed=29,50 MB, used=28,89 MB, max=-1,00 B, threshold=0,00 B
+2019-03-25 12:25:05.474+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Compressed Class Space (Non-heap memory): committed=4,00 MB, used=3,83 MB, max=1,00 GB, threshold=0,00 B
+2019-03-25 12:25:05.474+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: PS Eden Space (Heap memory): committed=126,00 MB, used=103,13 MB, max=1,29 GB, threshold=?
+2019-03-25 12:25:05.475+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: PS Survivor Space (Heap memory): committed=21,00 MB, used=20,97 MB, max=21,00 MB, threshold=?
+2019-03-25 12:25:05.475+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: PS Old Gen (Heap memory): committed=219,50 MB, used=34,54 MB, max=2,67 GB, threshold=0,00 B
+2019-03-25 12:25:05.475+0000 INFO  [o.n.k.i.DiagnosticsManager] Operating system information:
+2019-03-25 12:25:05.475+0000 INFO  [o.n.k.i.DiagnosticsManager] Operating System: Windows 10; version: 10.0; arch: amd64; cpus: 8
+2019-03-25 12:25:05.488+0000 INFO  [o.n.k.i.DiagnosticsManager] Process id: 16176@5CG8366SRV
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] Byte order: LITTLE_ENDIAN
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] Local timezone: Europe/Berlin
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] JVM information:
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Name: Java HotSpot(TM) 64-Bit Server VM
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Vendor: Oracle Corporation
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Version: 25.191-b12
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] JIT compiler: HotSpot 64-Bit Tiered Compilers
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Arguments: [-Xmx4096m, -Dclassworlds.conf=C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..\bin\m2.conf, -Dmaven.home=C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\.., -Dlibrary.jansi.path=C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..\lib\jansi-native, -Dmaven.multiModuleProjectDirectory=C:\workspaces\vsfmigrering\exjobb]
+2019-03-25 12:25:05.489+0000 INFO  [o.n.k.i.DiagnosticsManager] Java classpath:
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/yaml/1.3/yaml-1.3.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.12/FastInfoset-1.2.12.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/jruby-stdlib/9.1.7.0/jruby-stdlib-9.1.7.0.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/tycho-packaging-plugin/0.23.1/tycho-packaging-plugin-0.23.1.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/junit/1.3/junit-1.3.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/common/1.3/common-1.3.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.impl/0.8.1/xo.impl-0.8.1.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\jfr.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-webapp/9.2.9.v20150224/jetty-webapp-9.2.9.v20150224.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/headius/options/1.4/options-1.4.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-codegen/2.3.10/neo4j-codegen-2.3.10.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-server/9.2.9.v20150224/jetty-server-9.2.9.v20150224.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/org.eclipse.osgi/3.10.100.v20150529-1857/org.eclipse.osgi-3.10.100.v20150529-1857.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-kernel/2.3.10/neo4j-kernel-2.3.10-tests.jar
+2019-03-25 12:25:05.512+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/maven3/1.3/maven3-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-consistency-check/2.3.10/neo4j-consistency-check-2.3.10.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-xml/9.2.9.v20150224/jetty-xml-9.2.9.v20150224.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-shell/2.3.10/neo4j-shell-2.3.10.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-consistency-check-legacy/2.3.10/neo4j-consistency-check-legacy-2.3.10.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/tycho-metadata-model/0.23.1/tycho-metadata-model-0.23.1.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/asciidoctor-utilities/1.3.0/asciidoctor-utilities-1.3.0-rules2asciidoc-v2.xsl
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-io/2.3.10/neo4j-io-2.3.10-tests.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/xml/bind/jaxb-impl/2.2.8-b01/jaxb-impl-2.2.8-b01.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/xml/1.3/xml-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\jsse.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/common/1.3/common-1.3-tests.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/io/netty/netty-all/4.0.28.Final/netty-all-4.0.28.Final.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/asciidoctor/asciidoctorj/1.5.4.1/asciidoctorj-1.5.4.1.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/sonatype/sisu/sisu-guice/3.2.3/sisu-guice-3.2.3-no_aop.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-udc/2.3.10/neo4j-udc-2.3.10.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/bouncycastle/bcpkix-jdk15on/1.52/bcpkix-jdk15on-1.52.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-http/9.2.9.v20150224/jetty-http-9.2.9.v20150224.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/de/pdark/decentxml/1.3/decentxml-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j/2.3.10/neo4j-2.3.10.pom
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/rrd4j/rrd4j/2.2/rrd4j-2.2.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/driver/neo4j-java-driver/1.2.0/neo4j-java-driver-1.2.0.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/json/1.3/json-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/joni/joni/2.1.11/joni-2.1.11.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/jpa2/1.3/jpa2-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-posix/3.0.33/jnr-posix-3.0.33.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.neo4j.embedded/0.8.1/xo.neo4j.embedded-0.8.1.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/osgi/1.3/osgi-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/org.eclipse.osgi.compatibility.state/1.0.100.v20150402-1551/org.eclipse.osgi.compatibility.state-1.0.100.v20150402-1551.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/concurrentlinkedhashmap-lru-1.4.2.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/tycho/1.3/tycho-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/yaml/snakeyaml/1.16/snakeyaml-1.16.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/jaxrs/1.3/jaxrs-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/java8/1.3/java8-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/org.eclipse.tycho.embedder.shared/0.23.1/org.eclipse.tycho.embedder.shared-0.23.1.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher-compiler-2.2_2.11/2.2.10/neo4j-cypher-compiler-2.2_2.11-2.2.10.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/javaee6/1.3/javaee6-1.3.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\rt.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/app/neo4j-server/2.3.10/neo4j-server-2.3.10-static-web.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/oro/oro/2.0.8/oro-2.0.8.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\charsets.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-digester/commons-digester/1.6/commons-digester-1.6.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jffi/1.2.14/jffi-1.2.14-native.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/jersey/jersey-core/1.19/jersey-core-1.19.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/jersey/contribs/jersey-multipart/1.19/jersey-multipart-1.19.jar
+2019-03-25 12:25:05.513+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j/2.3.10/neo4j-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-util/9.2.9.v20150224/jetty-util-9.2.9.v20150224.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/jqassistant-maven-plugin/1.3.0/jqassistant-maven-plugin-1.3.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/parboiled/parboiled-scala_2.11/1.1.7/parboiled-scala_2.11-1.1.7.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\jce.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/sisu-equinox-api/0.23.1/sisu-equinox-api-0.23.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-constants/0.9.6/jnr-constants-0.9.6.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/googlecode/slf4j-maven-plugin-log/slf4j-maven-plugin-log/1.0.0/slf4j-maven-plugin-log-1.0.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-io/9.2.9.v20150224/jetty-io-9.2.9.v20150224.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath] C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\boot\plexus-classworlds-2.5.2.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-primitive-collections/2.3.10/neo4j-primitive-collections-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-servlet/9.2.9.v20150224/jetty-servlet-9.2.9.v20150224.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/graphml/1.3/graphml-1.3.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/jersey/jersey-server/1.19/jersey-server-1.19.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jvnet/mimepull/mimepull/1.9.3/mimepull-1.9.3.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-kernel/2.3.10/neo4j-kernel-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-lucene-index/2.3.10/neo4j-lucene-index-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\resources.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/istack/istack-commons-runtime/2.16/istack-commons-runtime-2.16.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.4/scala-parser-combinators_2.11-1.0.4.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/app/neo4j-server/2.3.10/neo4j-server-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-unsafe/2.3.10/neo4j-unsafe-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-netdb/1.1.6/jnr-netdb-1.1.6.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-csv/2.3.10/neo4j-csv-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/headius/invokebinder/1.7/invokebinder-1.7.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher/2.3.10/neo4j-cypher-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/app/neo4j-browser/2.3.10/neo4j-browser-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/testng/1.3/testng-1.3.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/dirgra/0.3/dirgra-0.3.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/org.eclipse.tycho.core.shared/0.23.1/org.eclipse.tycho.core.shared-0.23.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.neo4j.spi/0.8.1/xo.neo4j.spi-0.8.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/xml/bind/jaxb-core/2.2.8-b01/jaxb-core-2.2.8-b01.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\classes
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/jruby-core/9.1.7.0/jruby-core-9.1.7.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.neo4j.remote/0.8.1/xo.neo4j.remote-0.8.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-jmx/2.3.10/neo4j-jmx-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/extras/bytelist/1.0.13/bytelist-1.0.13.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/scanner/1.3.0/scanner-1.3.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-logging/2.3.10/neo4j-logging-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-graph-matching/2.3.10/neo4j-graph-matching-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/report/1.3.0/report-1.3.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/shared/1.3.0/shared-1.3.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/google/guava/guava/18.0/guava-18.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/jruby/jcodings/jcodings/1.0.18/jcodings-1.0.18.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/store/1.3.0/store-1.3.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/plugin/1.3.0/plugin-1.3.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher-compiler-2.3/2.3.10/neo4j-cypher-compiler-2.3-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/tycho-embedder-api/0.23.1/tycho-embedder-api-0.23.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/cdi/1.3/cdi-1.3.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/tycho-core/0.23.1/tycho-core-0.23.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-unixsocket/0.15/jnr-unixsocket-0.15.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/server-api/2.3.10/server-api-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/junit/junit/3.8.1/junit-3.8.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/rdbms/1.3/rdbms-1.3.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm-tree/5.2/asm-tree-5.2.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.api/0.8.1/xo.api-0.8.1.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/sun/jersey/jersey-servlet/1.19/jersey-servlet-1.19.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-io/2.3.10/neo4j-io-2.3.10.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar
+2019-03-25 12:25:05.514+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-io/commons-io/2.4/commons-io-2.4.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/joda-time/joda-time/2.8.2/joda-time-2.8.2.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm-commons/5.2/asm-commons-5.2.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.0.M1/org.eclipse.sisu.inject-0.3.0.M1.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/rule/1.3.0/rule-1.3.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/3rdparty/javax/ws/rs/jsr311-api/1.1.2.r612/jsr311-api-1.1.2.r612.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/jetty/jetty-security/9.2.9.v20150224/jetty-security-9.2.9.v20150224.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/java/1.3/java-1.3.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jffi/1.2.14/jffi-1.2.14.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-graph-algo/2.3.10/neo4j-graph-algo-2.3.10.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/neo4jserver.neo4jv2/1.3.0/neo4jserver.neo4jv2-1.3.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher-frontend-2.3/2.3.10/neo4j-cypher-frontend-2.3-2.3.10.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/jline/jline/2.12/jline-2.12.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/commons/commons-compress/1.10/commons-compress-1.10.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/javax/xml/bind/jaxb-api/2.2.9/jaxb-api-2.2.9.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/eclipse/tycho/sisu-equinox-embedder/0.23.1/sisu-equinox-embedder-0.23.1.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm-analysis/5.2/asm-analysis-5.2.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/bouncycastle/bcprov-jdk15on/1.52/bcprov-jdk15on-1.52.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.spi/0.8.1/xo.spi-0.8.1.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\lib\sunrsasign.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/github/jnr/jnr-enxio/0.14/jnr-enxio-0.14.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/velocity/velocity/1.5/velocity-1.5.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/core/analysis/1.3.0/analysis-1.3.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/beust/jcommander/1.35/jcommander-1.35.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/martiansoftware/nailgun-server/0.9.1/nailgun-server-0.9.1.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-cypher-compiler-1.9_2.11/2.0.5/neo4j-cypher-compiler-1.9_2.11-2.0.5.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/neo4jserver.embedded/1.3.0/neo4jserver.embedded-1.3.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/neo4jserver.bootstrap/1.3.0/neo4jserver.bootstrap-1.3.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/neo4j/neo4j-function/2.3.10/neo4j-function-2.3.10.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/xo/xo.neo4j.api/0.8.1/xo.neo4j.api-0.8.1.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm-util/5.2/asm-util-5.2.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/asciidoctor-utilities/1.3.0/asciidoctor-utilities-1.3.0-plugin2asciidoc.xsl
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/ow2/asm/asm/5.2/asm-5.2.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/buschmais/jqassistant/plugin/ejb3/1.3/ejb3-1.3.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Utvpgm/vsfmigrering/Maven/repository/com/headius/unsafe-fences/1.0/unsafe-fences-1.0.jar
+2019-03-25 12:25:05.515+0000 INFO  [o.n.k.i.DiagnosticsManager] Library path:
+2019-03-25 12:25:05.516+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\bin
+2019-03-25 12:25:05.516+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\Sun\Java\bin
+2019-03-25 12:25:05.516+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\System32
+2019-03-25 12:25:05.517+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows
+2019-03-25 12:25:05.517+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\bin
+2019-03-25 12:25:05.517+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin
+2019-03-25 12:25:05.517+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Utvpgm\vsfmigrering\Subversion\bin
+2019-03-25 12:25:05.518+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+2019-03-25 12:25:05.518+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\System32
+2019-03-25 12:25:05.518+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows
+2019-03-25 12:25:05.518+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\System32\wbem
+2019-03-25 12:25:05.518+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Windows\System32\WindowsPowerShell\v1.0
+2019-03-25 12:25:05.519+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\Plantronics\Spokes3G
+2019-03-25 12:25:05.519+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\CA\Gen85\Gen
+2019-03-25 12:25:05.520+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\Users\CSN8030\AppData\Local\Microsoft\WindowsApps
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\workspaces\vsfmigrering\exjobb
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] C:\workspaces\vsfmigrering\exjobb
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] System.properties:
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.boot.library.path = C:\Utvpgm\vsfmigrering\Java\jdk1.8.0_191\jre\bin
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] maven.multiModuleProjectDirectory = C:\workspaces\vsfmigrering\exjobb
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] guice.disable.misplaced.annotation.check = true
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] path.separator = ;
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] file.encoding.pkg = sun.io
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] user.country = SE
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] user.script = 
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.java.launcher = SUN_STANDARD
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.os.patch.level = 
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] user.dir = C:\workspaces\vsfmigrering\exjobb
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] user.variant = 
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] classworlds.conf = C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..\bin\m2.conf
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.jnu.encoding = Cp1252
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] maven.conf = C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\../conf
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] library.jansi.path = C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..\lib\jansi-native
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] user.home = C:\Users\CSN8030
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] user.timezone = Europe/Berlin
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] file.encoding = Cp1252
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] user.name = CSN8030
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.java.command = org.codehaus.plexus.classworlds.launcher.Launcher jqassistant:server
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.arch.data.model = 64
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] user.language = sv
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] awt.toolkit = sun.awt.windows.WToolkit
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.stderr.encoding = cp850
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] maven.home = C:\Utvpgm\vsfmigrering\Maven\apache-maven-3.5.4\bin\..
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] file.separator = \
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.io.unicode.encoding = UnicodeLittle
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.cpu.endian = little
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.stdout.encoding = cp850
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.desktop = windows
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.cpu.isalist = amd64
+2019-03-25 12:25:05.521+0000 INFO  [o.n.k.i.DiagnosticsManager] Network information:
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Software Loopback Interface 1:
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 127.0.0.1
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 0:0:0:0:0:0:0:1
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64:
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Teredo Tunneling Pseudo-Interface:
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:0:ffff:ffff:fffe%net0
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Bluetooth Device (RFCOMM Protocol TDI):
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter:
+2019-03-25 12:25:05.565+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:8c2:2954:cb07:d52b%wlan0
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Bluetooth Device (Personal Area Network):
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:406f:a5dc:8084:4e3a%eth1
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 172.26.66.206
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:d0a5:229b:7417:941f%eth2
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:f9b0:4675:ba50:e287%wlan1
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Kernel Debug Network Adapter:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM-WFP Native MAC Layer LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-TM NDIS Sample LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM-QoS Packet Scheduler-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-WFP Native MAC Layer LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-Virtual WiFi Filter Driver-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-Native WiFi Filter Driver-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Ethernet Connection (4) I219-LM-TM NDIS Sample LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-QoS Packet Scheduler-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Intel(R) Dual Band Wireless-AC 8265-TM NDIS Sample LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2019-03-25 12:25:05.566+0000 INFO  [o.n.k.i.DiagnosticsManager] --- INITIALIZED diagnostics END ---
+2019-03-25 12:25:06.441+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 1 on :label[0](property[0]) is ONLINE
+2019-03-25 12:25:06.508+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 2 on :label[6](property[1]) is ONLINE
+2019-03-25 12:25:06.519+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 3 on :label[8](property[4]) is ONLINE
+2019-03-25 12:25:06.529+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 4 on :label[1](property[1]) is ONLINE
+2019-03-25 12:25:06.540+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 5 on :label[2](property[2]) is ONLINE
+2019-03-25 12:25:06.551+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 6 on :label[7](property[1]) is ONLINE
+2019-03-25 12:25:06.564+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 7 on :label[5](property[3]) is ONLINE
+2019-03-25 12:25:06.577+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 8 on :label[4](property[1]) is ONLINE
+2019-03-25 12:25:06.589+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 9 on :label[3](property[1]) is ONLINE
+2019-03-25 12:25:06.600+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 10 on :label[9](property[5]) is ONLINE
+2019-03-25 12:25:07.089+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 1 on :File(fileName) is ONLINE
+2019-03-25 12:25:07.089+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 2 on :Project(fqn) is ONLINE
+2019-03-25 12:25:07.090+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 3 on :ColumnType(databaseType) is ONLINE
+2019-03-25 12:25:07.090+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 4 on :Type(fqn) is ONLINE
+2019-03-25 12:25:07.090+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 5 on :Concept(id) is ONLINE
+2019-03-25 12:25:07.090+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 6 on :Package(fqn) is ONLINE
+2019-03-25 12:25:07.090+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 7 on :Repository(url) is ONLINE
+2019-03-25 12:25:07.090+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 8 on :Artifact(fqn) is ONLINE
+2019-03-25 12:25:07.091+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 9 on :Pom(fqn) is ONLINE
+2019-03-25 12:25:07.091+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 10 on :Value(value) is ONLINE
+2019-03-25 12:25:07.093+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :File(fileName)
+2019-03-25 12:25:07.100+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :File(fileName) with 11 unique values in sample of avg size 11 taken from index containing 11 entries
+2019-03-25 12:25:07.100+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Type(fqn)
+2019-03-25 12:25:07.101+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Type(fqn) with 7 unique values in sample of avg size 7 taken from index containing 7 entries
+2019-03-25 12:25:07.101+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Concept(id)
+2019-03-25 12:25:07.102+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Concept(id) with 0 unique values in sample of avg size 0 taken from index containing 0 entries
+2019-03-25 12:25:07.102+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Package(fqn)
+2019-03-25 12:25:07.103+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Package(fqn) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2019-03-25 12:25:07.103+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Project(fqn)
+2019-03-25 12:25:07.103+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Project(fqn) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2019-03-25 12:25:07.104+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :ColumnType(databaseType)
+2019-03-25 12:25:07.104+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :ColumnType(databaseType) with 0 unique values in sample of avg size 0 taken from index containing 0 entries
+2019-03-25 12:25:07.104+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Value(value)
+2019-03-25 12:25:07.104+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Value(value) with 7 unique values in sample of avg size 18 taken from index containing 18 entries
+2019-03-25 12:25:07.105+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Artifact(fqn)
+2019-03-25 12:25:07.105+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Artifact(fqn) with 17 unique values in sample of avg size 17 taken from index containing 17 entries
+2019-03-25 12:25:07.106+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Repository(url)
+2019-03-25 12:25:07.106+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Repository(url) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2019-03-25 12:25:07.106+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Pom(fqn)
+2019-03-25 12:25:07.107+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Pom(fqn) with 1 unique values in sample of avg size 2 taken from index containing 2 entries
+2019-03-25 12:25:07.117+0000 INFO  [o.n.k.KernelHealth] Kernel health set to OK
+2019-03-25 12:25:07.261+0000 INFO  [o.n.k.AvailabilityGuard] Fulfilling of requirement makes database available: Database available
+2019-03-25 12:25:07.275+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] Database is now ready
+2019-03-25 12:25:07.277+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2019-03-25 12:25:07.277+0000 INFO  [o.n.k.i.DiagnosticsManager] Graph Database: Community StoreId{creationTime=1553516688720, randomId=4994342819918189792, storeVersion=15250506225055238, upgradeTime=1553516688720, upgradeId=1}
+2019-03-25 12:25:07.277+0000 INFO  [o.n.k.i.DiagnosticsManager] Kernel version: 2.3.10,ee54164393ec8984f4ef380f80016b4405f7a929
+2019-03-25 12:25:07.277+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2019-03-25 12:25:07.279+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2019-03-25 12:25:07.279+0000 INFO  [o.n.k.i.DiagnosticsManager] Store versions:
+2019-03-25 12:25:07.279+0000 INFO  [o.n.k.i.DiagnosticsManager] Store versions:
+2019-03-25 12:25:07.279+0000 INFO  [o.n.k.i.DiagnosticsManager] ArrayPropertyStore v0.A.6
+2019-03-25 12:25:07.279+0000 INFO  [o.n.k.i.DiagnosticsManager] NodeStore v0.A.6
+2019-03-25 12:25:07.279+0000 INFO  [o.n.k.i.DiagnosticsManager] StringPropertyStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] PropertyIndexStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] StringPropertyStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] ArrayPropertyStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] PropertyStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] RelationshipStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] StringPropertyStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] RelationshipTypeStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] StringPropertyStore v0.A.6
+2019-03-25 12:25:07.280+0000 INFO  [o.n.k.i.DiagnosticsManager] LabelTokenStore v0.A.6
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager] SchemaStore v0.A.6
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager] RelationshipGroupStore v0.A.6
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager] NeoStore v0.A.6
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager] Id usage:
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager] Id usage:
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore v0.A.6: used=1 high=0
+2019-03-25 12:25:07.281+0000 INFO  [o.n.k.i.DiagnosticsManager]   NodeStore v0.A.6: used=159 high=158
+2019-03-25 12:25:07.282+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.6: used=42 high=41
+2019-03-25 12:25:07.282+0000 INFO  [o.n.k.i.DiagnosticsManager]   PropertyIndexStore v0.A.6: used=41 high=40
+2019-03-25 12:25:07.282+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.6: used=32 high=31
+2019-03-25 12:25:07.282+0000 INFO  [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore v0.A.6: used=1 high=0
+2019-03-25 12:25:07.282+0000 INFO  [o.n.k.i.DiagnosticsManager]   PropertyStore v0.A.6: used=251 high=250
+2019-03-25 12:25:07.282+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipStore v0.A.6: used=257 high=256
+2019-03-25 12:25:07.282+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.6: used=32 high=31
+2019-03-25 12:25:07.282+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipTypeStore v0.A.6: used=31 high=30
+2019-03-25 12:25:07.283+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.6: used=33 high=32
+2019-03-25 12:25:07.283+0000 INFO  [o.n.k.i.DiagnosticsManager]   LabelTokenStore v0.A.6: used=32 high=31
+2019-03-25 12:25:07.283+0000 INFO  [o.n.k.i.DiagnosticsManager]   SchemaStore v0.A.6: used=11 high=10
+2019-03-25 12:25:07.283+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipGroupStore v0.A.6: used=1 high=0
+2019-03-25 12:25:07.283+0000 INFO  [o.n.k.i.DiagnosticsManager]   NeoStore v0.A.6: used=15 high=14
+2019-03-25 12:25:07.283+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2019-03-25 12:25:07.283+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS START ---
+2019-03-25 12:25:07.283+0000 INFO  [o.n.k.i.DiagnosticsManager] Neostore records:
+2019-03-25 12:25:07.284+0000 INFO  [o.n.k.i.DiagnosticsManager] TIME (Creation time): 1553516688720
+2019-03-25 12:25:07.284+0000 INFO  [o.n.k.i.DiagnosticsManager] RANDOM_NUMBER (Random number for store id): 4994342819918189792
+2019-03-25 12:25:07.284+0000 INFO  [o.n.k.i.DiagnosticsManager] LOG_VERSION (Current log version): 0
+2019-03-25 12:25:07.284+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_ID (Last committed transaction): 107
+2019-03-25 12:25:07.284+0000 INFO  [o.n.k.i.DiagnosticsManager] STORE_VERSION (Store format version): 15250506225055238
+2019-03-25 12:25:07.284+0000 INFO  [o.n.k.i.DiagnosticsManager] FIRST_GRAPH_PROPERTY (First property record containing graph properties): -1
+2019-03-25 12:25:07.284+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CONSTRAINT_TRANSACTION (Last committed transaction containing constraint changes): 0
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_ID (Transaction id most recent upgrade was performed at): 1
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TIME (Time of last upgrade): 1553516688720
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_CHECKSUM (Checksum of last committed transaction): -160767048685
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_CHECKSUM (Checksum of transaction id the most recent upgrade was performed at): 0
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_VERSION (Log version where the last transaction commit entry has been written into): 0
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET (Byte offset in the log file where the last transaction commit entry has been written into): 73144
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_COMMIT_TIMESTAMP (Commit time timestamp for last committed transaction): 1553516691745
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_COMMIT_TIMESTAMP (Commit timestamp of transaction the most recent upgrade was performed at): 0
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS END ---
+2019-03-25 12:25:07.285+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE START ---
+2019-03-25 12:25:07.286+0000 INFO  [o.n.k.i.DiagnosticsManager] Transaction log:
+2019-03-25 12:25:07.288+0000 INFO  [o.n.k.i.DiagnosticsManager] Oldest transaction 2 found in log with version 0
+2019-03-25 12:25:07.288+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE END ---
+2019-03-25 12:25:07.288+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2019-03-25 12:25:07.291+0000 INFO  [o.n.k.i.DiagnosticsManager] Disk space on partition (Total / Free / Free %): 511123124224 / 439333662720 / 85
+Storage files: (filename : modification date - size)
+2019-03-25 12:25:07.293+0000 INFO  [o.n.k.i.DiagnosticsManager]   index:
+2019-03-25 12:25:07.294+0000 INFO  [o.n.k.i.DiagnosticsManager]   - Total: 2019-03-25T13:24:48+0100 - 0,00 B
+2019-03-25 12:25:07.294+0000 INFO  [o.n.k.i.DiagnosticsManager]   messages.log: 2019-03-25T13:25:06+0100 - 135,10 kB
+2019-03-25 12:25:07.294+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.295+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.counts.db.a: 2019-03-25T13:24:49+0100 - 96,00 B
+2019-03-25 12:25:07.295+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.counts.db.b: 2019-03-25T13:24:52+0100 - 10,81 kB
+2019-03-25 12:25:07.295+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.id: 2019-03-25T13:25:06+0100 - 9,00 B
+2019-03-25 12:25:07.296+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.296+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.id: 2019-03-25T13:25:06+0100 - 9,00 B
+2019-03-25 12:25:07.297+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.names: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.297+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.names.id: 2019-03-25T13:25:06+0100 - 9,00 B
+2019-03-25 12:25:07.297+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.298+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.id: 2019-03-25T13:25:05+0100 - 9,00 B
+2019-03-25 12:25:07.298+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.labels: 2019-03-25T13:24:47+0100 - 8,00 kB
+2019-03-25 12:25:07.298+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.labels.id: 2019-03-25T13:25:05+0100 - 9,00 B
+2019-03-25 12:25:07.298+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db: 2019-03-25T13:24:52+0100 - 15,94 kB
+2019-03-25 12:25:07.299+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.arrays: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:25:07.299+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.arrays.id: 2019-03-25T13:25:05+0100 - 9,00 B
+2019-03-25 12:25:07.299+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.id: 2019-03-25T13:25:05+0100 - 9,00 B
+2019-03-25 12:25:07.300+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.300+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.id: 2019-03-25T13:25:05+0100 - 9,00 B
+2019-03-25 12:25:07.300+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.keys: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.300+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.keys.id: 2019-03-25T13:25:05+0100 - 9,00 B
+2019-03-25 12:25:07.301+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.strings: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.301+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.strings.id: 2019-03-25T13:25:05+0100 - 9,00 B
+2019-03-25 12:25:07.301+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipgroupstore.db: 2019-03-25T13:24:48+0100 - 8,00 kB
+2019-03-25 12:25:07.301+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipgroupstore.db.id: 2019-03-25T13:25:06+0100 - 9,00 B
+2019-03-25 12:25:07.302+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipstore.db: 2019-03-25T13:24:52+0100 - 15,94 kB
+2019-03-25 12:25:07.302+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipstore.db.id: 2019-03-25T13:25:05+0100 - 9,00 B
+2019-03-25 12:25:07.302+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.303+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.id: 2019-03-25T13:25:06+0100 - 9,00 B
+2019-03-25 12:25:07.303+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.names: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.303+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.names.id: 2019-03-25T13:25:06+0100 - 9,00 B
+2019-03-25 12:25:07.303+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.schemastore.db: 2019-03-25T13:24:52+0100 - 8,00 kB
+2019-03-25 12:25:07.304+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.schemastore.db.id: 2019-03-25T13:25:06+0100 - 9,00 B
+2019-03-25 12:25:07.304+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.transaction.db.0: 2019-03-25T13:24:52+0100 - 71,45 kB
+2019-03-25 12:25:07.304+0000 INFO  [o.n.k.i.DiagnosticsManager]   schema:
+2019-03-25 12:25:07.304+0000 INFO  [o.n.k.i.DiagnosticsManager]     index:
+2019-03-25 12:25:07.305+0000 INFO  [o.n.k.i.DiagnosticsManager]       lucene:
+2019-03-25 12:25:07.305+0000 INFO  [o.n.k.i.DiagnosticsManager]         1:
+2019-03-25 12:25:07.305+0000 INFO  [o.n.k.i.DiagnosticsManager]           _0.cfs: 2019-03-25T13:24:51+0100 - 710,00 B
+2019-03-25 12:25:07.306+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.306+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.306+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_2: 2019-03-25T13:24:52+0100 - 257,00 B
+2019-03-25 12:25:07.306+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.306+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 16,96 kB
+2019-03-25 12:25:07.307+0000 INFO  [o.n.k.i.DiagnosticsManager]         10:
+2019-03-25 12:25:07.307+0000 INFO  [o.n.k.i.DiagnosticsManager]           _0.cfs: 2019-03-25T13:24:52+0100 - 814,00 B
+2019-03-25 12:25:07.307+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.308+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.308+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_2: 2019-03-25T13:24:52+0100 - 257,00 B
+2019-03-25 12:25:07.308+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.308+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 17,07 kB
+2019-03-25 12:25:07.308+0000 INFO  [o.n.k.i.DiagnosticsManager]         2:
+2019-03-25 12:25:07.309+0000 INFO  [o.n.k.i.DiagnosticsManager]           _0.cfs: 2019-03-25T13:24:52+0100 - 250,00 B
+2019-03-25 12:25:07.309+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.310+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.310+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_2: 2019-03-25T13:24:52+0100 - 257,00 B
+2019-03-25 12:25:07.310+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.311+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 16,51 kB
+2019-03-25 12:25:07.311+0000 INFO  [o.n.k.i.DiagnosticsManager]         3:
+2019-03-25 12:25:07.311+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.311+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:50+0100 - 20,00 B
+2019-03-25 12:25:07.312+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_1: 2019-03-25T13:24:50+0100 - 46,00 B
+2019-03-25 12:25:07.312+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.312+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 16,06 kB
+2019-03-25 12:25:07.312+0000 INFO  [o.n.k.i.DiagnosticsManager]         4:
+2019-03-25 12:25:07.313+0000 INFO  [o.n.k.i.DiagnosticsManager]           _0.cfs: 2019-03-25T13:24:51+0100 - 456,00 B
+2019-03-25 12:25:07.313+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.313+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.313+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_2: 2019-03-25T13:24:52+0100 - 257,00 B
+2019-03-25 12:25:07.314+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.314+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 16,72 kB
+2019-03-25 12:25:07.314+0000 INFO  [o.n.k.i.DiagnosticsManager]         5:
+2019-03-25 12:25:07.315+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.315+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:50+0100 - 20,00 B
+2019-03-25 12:25:07.315+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_1: 2019-03-25T13:24:50+0100 - 46,00 B
+2019-03-25 12:25:07.315+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.315+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 16,06 kB
+2019-03-25 12:25:07.316+0000 INFO  [o.n.k.i.DiagnosticsManager]         6:
+2019-03-25 12:25:07.316+0000 INFO  [o.n.k.i.DiagnosticsManager]           _0.cfs: 2019-03-25T13:24:51+0100 - 220,00 B
+2019-03-25 12:25:07.316+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.317+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.317+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_2: 2019-03-25T13:24:52+0100 - 257,00 B
+2019-03-25 12:25:07.317+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.317+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 16,49 kB
+2019-03-25 12:25:07.317+0000 INFO  [o.n.k.i.DiagnosticsManager]         7:
+2019-03-25 12:25:07.318+0000 INFO  [o.n.k.i.DiagnosticsManager]           _0.cfs: 2019-03-25T13:24:52+0100 - 254,00 B
+2019-03-25 12:25:07.318+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.318+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.319+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_2: 2019-03-25T13:24:52+0100 - 257,00 B
+2019-03-25 12:25:07.319+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.319+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 16,52 kB
+2019-03-25 12:25:07.319+0000 INFO  [o.n.k.i.DiagnosticsManager]         8:
+2019-03-25 12:25:07.320+0000 INFO  [o.n.k.i.DiagnosticsManager]           _0.cfs: 2019-03-25T13:24:52+0100 - 1,17 kB
+2019-03-25 12:25:07.320+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.320+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.320+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_2: 2019-03-25T13:24:52+0100 - 257,00 B
+2019-03-25 12:25:07.321+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.321+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 17,44 kB
+2019-03-25 12:25:07.321+0000 INFO  [o.n.k.i.DiagnosticsManager]         9:
+2019-03-25 12:25:07.321+0000 INFO  [o.n.k.i.DiagnosticsManager]           _0.cfs: 2019-03-25T13:24:52+0100 - 280,00 B
+2019-03-25 12:25:07.322+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2019-03-25T13:24:50+0100 - 16,00 kB
+2019-03-25 12:25:07.322+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.322+0000 INFO  [o.n.k.i.DiagnosticsManager]           segments_2: 2019-03-25T13:24:52+0100 - 257,00 B
+2019-03-25 12:25:07.322+0000 INFO  [o.n.k.i.DiagnosticsManager]           write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.322+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2019-03-25T13:25:06+0100 - 16,54 kB
+2019-03-25 12:25:07.323+0000 INFO  [o.n.k.i.DiagnosticsManager]       - Total: 2019-03-25T13:24:50+0100 - 166,38 kB
+2019-03-25 12:25:07.323+0000 INFO  [o.n.k.i.DiagnosticsManager]     - Total: 2019-03-25T13:24:50+0100 - 166,38 kB
+2019-03-25 12:25:07.323+0000 INFO  [o.n.k.i.DiagnosticsManager]     label:
+2019-03-25 12:25:07.323+0000 INFO  [o.n.k.i.DiagnosticsManager]       lucene:
+2019-03-25 12:25:07.324+0000 INFO  [o.n.k.i.DiagnosticsManager]         _0.cfs: 2019-03-25T13:24:51+0100 - 1,03 kB
+2019-03-25 12:25:07.324+0000 INFO  [o.n.k.i.DiagnosticsManager]         segments.gen: 2019-03-25T13:24:52+0100 - 20,00 B
+2019-03-25 12:25:07.324+0000 INFO  [o.n.k.i.DiagnosticsManager]         segments_1: 2019-03-25T13:24:52+0100 - 243,00 B
+2019-03-25 12:25:07.324+0000 INFO  [o.n.k.i.DiagnosticsManager]         write.lock: 2019-03-25T13:25:06+0100 - 0,00 B
+2019-03-25 12:25:07.324+0000 INFO  [o.n.k.i.DiagnosticsManager]       - Total: 2019-03-25T13:25:06+0100 - 1,29 kB
+2019-03-25 12:25:07.325+0000 INFO  [o.n.k.i.DiagnosticsManager]     - Total: 2019-03-25T13:24:48+0100 - 1,29 kB
+2019-03-25 12:25:07.325+0000 INFO  [o.n.k.i.DiagnosticsManager]   - Total: 2019-03-25T13:24:50+0100 - 167,66 kB
+2019-03-25 12:25:07.325+0000 INFO  [o.n.k.i.DiagnosticsManager]   store_lock: 2019-03-25T13:24:47+0100 - 0,00 B
+2019-03-25 12:25:07.325+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2019-03-25 12:25:08.405+0000 INFO  [o.n.k.i.DiagnosticsManager] --- SERVER STARTED START ---
+2019-03-25 12:25:09.138+0000 INFO  [o.n.k.i.DiagnosticsManager] --- SERVER STARTED END ---
+2019-03-25 12:25:16.975+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 454ms.
