@@ -1,0 +1,6 @@
+Scanning av helloworld.war
+bin\jqassistant.cmd scan -f C:\workspaces\GuardienErsättare\backend\helloworld.war -s jqassistant\stores\helloworld\
+
+
+Start server
+bin\jqassistant.cmd server -s jqassistant\stores\helloworld\
