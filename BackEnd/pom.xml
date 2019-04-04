@@ -32,14 +32,14 @@
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.1</version>
 		</dependency>
-		
+
 		<!-- NEO4J DB CONNECTION -->
 		<dependency>
 			<groupId>org.neo4j.driver</groupId>
 			<artifactId>neo4j-java-driver</artifactId>
 			<version>1.6.1</version>
 		</dependency>
-		
+
 		<!--JACKSON DEPENDENCYS FÖR JSON/XML convert -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
@@ -51,6 +51,18 @@
 			<artifactId>jackson-module-jaxb-annotations</artifactId>
 			<version>2.4.0</version>
 		</dependency>
+		<!-- CorsFilter --> 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.thetransactioncompany</groupId>
+			<artifactId>cors-filter</artifactId>
+			<version>1.8</version>
+		</dependency>
+
 
 
 	</dependencies>

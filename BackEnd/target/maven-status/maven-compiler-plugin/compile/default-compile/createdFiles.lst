@@ -1,2 +1,5 @@
-rest4\Rest4Application.class
+rest4\CorsFilter.class
 rest4\HelloWorld.class
+rest4\Name.class
+rest4\Person.class
+rest4\Rest4Application.class

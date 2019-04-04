@@ -1,7 +1,7 @@
 package rest4;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 import javax.ws.rs.*;
 
@@ -9,7 +9,7 @@ import org.neo4j.driver.v1.*;
 
 
 @Path("admin")
-@Produces("application/json")
+
 public class HelloWorld {
 	
 	private String uri = "bolt://localhost:7687";
@@ -17,7 +17,7 @@ public class HelloWorld {
 	private String password = "";
 
 	
-
+	
 	@GET
 	@Path("hello")
 	public String sayHello() {
@@ -37,7 +37,7 @@ public class HelloWorld {
 	@GET
 	@Path("connect")
 	
-	public Name connect() {
+	public String connect() {
 	    Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 		try (Session session = driver.session()) {
 			   StatementResult result = session.run("MATCH (n:Java) RETURN n.name LIMIT 25");
@@ -50,7 +50,6 @@ public class HelloWorld {
 		        
 		            
 		       }
-		       Name n = new Name(res.get(0).toString());
 		       
 			   /*List<Record> storeList = storeList(result);
 			   for(Record r :storeList) {
@@ -59,7 +58,7 @@ public class HelloWorld {
 			   
 		
 			   
-				return n;
+				return res.toString();
 		}
 	
 
@@ -77,5 +76,26 @@ public class HelloWorld {
 	        return list;
 
 	    }*/
+	@GET
+	@Path("class")
+	@Produces("application/json")
+	public String ClassFind() {
+		 Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
+			try (Session session = driver.session()) {
+				StatementResult result = session.run("match (n:Class) return n.fqn as fqn, n.name as name");
+
+				Record res = null;
+				
+				System.out.println(result.list());
+				
+				while(result.hasNext()) {
+					res = result.next();
+					//System.out.println(result.list().toString());
+					System.out.println(res.get("fqn"));
+				}
+			return "hej";	   
+			}
+	}
+	
 
 }
