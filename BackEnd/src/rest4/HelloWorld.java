@@ -1,11 +1,19 @@
 package rest4;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //import java.util.ArrayList;
 //import java.util.List;
 
 import javax.ws.rs.*;
 
+
 import org.neo4j.driver.v1.*;
+import org.neo4j.driver.v1.types.Node;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @Path("admin")
@@ -84,18 +92,50 @@ public class HelloWorld {
 			try (Session session = driver.session()) {
 				StatementResult result = session.run("match (n:Class) return n.fqn as fqn, n.name as name");
 
-				Record res = null;
 				
-				System.out.println(result.list());
+				String name= null;
+				String fqn = null;
+				String json = null;
+				List<Name> nameList = new ArrayList<>();
+		
+				Name n = null;
+				//System.out.println(result.list());
 				
+				//loop through all data
 				while(result.hasNext()) {
-					res = result.next();
-					//System.out.println(result.list().toString());
-					System.out.println(res.get("fqn"));
+					Record res = result.next();
+					System.out.println(res.toString());
+					
+					name = res.get("name").asString();
+					fqn = res.get("fqn").asString();
+					n = new Name(name,fqn);
+					
+					
+					nameList.add(n);
+				
 				}
-			return "hej";	   
+				
+				//Jackson ObjectMapper used to serialize java object as JSON output
+				ObjectMapper objectMapper = new ObjectMapper();
+			
+				json = objectMapper.writeValueAsString(nameList);
+				System.out.println(json);
+				
+				return json;
+				
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
 			}
+			
+			return "Cant Connect to DB";
+				
+		
+				
+				
+   
+
 	}
+	
 	
 
 }

@@ -4,19 +4,23 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
+import {HttpClientModule} from '@angular/common/http';
+import {NamesComponent } from './names/names.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NamesComponent
 
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [NamesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

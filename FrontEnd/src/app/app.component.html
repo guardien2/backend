@@ -5,6 +5,11 @@
   <mat-tab label="One">
     <h1>Some tab content</h1>
     <p>...</p>
+    <input type="text" (keyup)="onNameKeyUp($event)">
+    <button (click)="getName()">Get JSON</button>
+    <span>name is :{{name}} fqn is :{{fqn}} </span>
+ 
+
   </mat-tab>
   <mat-tab label="Two">
     <h1>Some more tab content</h1>
