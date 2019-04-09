@@ -1,27 +1,27 @@
 package rest4;
 
 public class Name {
-	String name;
-	String fqn;
-	public Name(String name, String fqm) {
-		this.name = name;
-		this.fqn = fqm;
+	String artefakt;
+	String klasser;
+	public Name(String artefakt, String klasser) {
+		this.artefakt = artefakt;
+		this.klasser = klasser;
 	}
 
-	public String getFqn() {
-		return fqn;
+	public String getKlasser() {
+		return klasser;
 	}
 
-	public void setFqn(String fqn) {
-		this.fqn = fqn;
+	public void setKlasser(String klasser) {
+		this.klasser = klasser;
 	}
 
-	public String getName() {
-		return name;
+	public String getArtefakt() {
+		return artefakt;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setArtefakt(String artefakt) {
+		this.artefakt = artefakt;
 	}
 	
 	

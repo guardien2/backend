@@ -90,11 +90,11 @@ public class HelloWorld {
 	public String ClassFind() {
 		 Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 			try (Session session = driver.session()) {
-				StatementResult result = session.run("match (n:Class) return n.fqn as fqn, n.name as name");
+				StatementResult result = session.run("MATCH (a:Artifact)-[:CONTAINS]->(t:Type) RETURN a.fileName AS artefakt, count(t) AS klasser ORDER BY klasser DESC");
 
 				
-				String name= null;
-				String fqn = null;
+				String artefakt= null;
+				String klasser = null;
 				String json = null;
 				List<Name> nameList = new ArrayList<>();
 		
@@ -106,9 +106,9 @@ public class HelloWorld {
 					Record res = result.next();
 					System.out.println(res.toString());
 					
-					name = res.get("name").asString();
-					fqn = res.get("fqn").asString();
-					n = new Name(name,fqn);
+					artefakt = res.get("artefakt").toString();
+					klasser = res.get("klasser").toString();
+					n = new Name(artefakt,klasser);
 					
 					
 					nameList.add(n);
