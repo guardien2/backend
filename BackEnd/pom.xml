@@ -27,6 +27,8 @@
 		</plugins>
 	</build>
 	<dependencies>
+	
+		<!-- javax-rs REST API -->
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
@@ -61,6 +63,12 @@
 			<groupId>com.thetransactioncompany</groupId>
 			<artifactId>cors-filter</artifactId>
 			<version>1.8</version>
+		</dependency>
+				<!-- Parse SQL -->
+		<dependency>
+			<groupId>com.github.jsqlparser</groupId>
+			<artifactId>jsqlparser</artifactId>
+			<version>1.2</version>
 		</dependency>
 
 
