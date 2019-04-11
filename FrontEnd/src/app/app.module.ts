@@ -7,12 +7,16 @@ import {MatListModule} from '@angular/material/list';
 import {HttpClientModule} from '@angular/common/http';
 import {NamesComponent } from './names/names.component';
 import { FqnNameComponent } from './fqn-name/fqn-name.component';
+import { SearchComponent } from './search/search.component';
+import {TextFieldModule} from '@angular/cdk/text-field';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FqnNameComponent
+    FqnNameComponent,
+    SearchComponent
 
   ],
   imports: [
@@ -20,7 +24,9 @@ import { FqnNameComponent } from './fqn-name/fqn-name.component';
     BrowserAnimationsModule,
     MatTabsModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    TextFieldModule,
+    MatButtonModule
 
   ],
   providers: [FqnNameComponent],

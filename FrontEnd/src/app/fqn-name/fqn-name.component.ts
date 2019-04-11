@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {CommonModule} from '@angular/common';
+
 @Component({
     selector: 'app-fqn-name',
     templateUrl: './fqn-name.component.html',
@@ -19,8 +20,8 @@ export class FqnNameComponent implements OnInit {
     ngOnInit() {
         this.http.get('http://localhost:9080/BackEnd/app/admin/class')
             .subscribe(
-                (nodes) => {
-                   this.nodes = nodes;
+                (data: any[]) => {
+                   this.nodes = data;
 
                 }
             );
