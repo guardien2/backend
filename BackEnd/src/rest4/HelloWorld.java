@@ -89,7 +89,6 @@ public class HelloWorld {
 
 			Name n = null;
 			// System.out.println(result.list());
-
 			// loop through all data
 			for (int i = 0; i < 10; i++) {
 				Record res = result.next();
@@ -122,7 +121,54 @@ public class HelloWorld {
 	@GET
 	@Path("usedby/{test}")
 	@Produces("application/json")
-	public void  UsedBy(@PathParam("test") String test) {
+	public String UsedBy(@PathParam("test") String test) {
 		System.out.println(test);
+		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
+
+		try (Session session = driver.session()) {
+			StatementResult result = session.run("MATCH (ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) "
+					+ "WHERE upper(t.name) CONTAINS \"" + test + "\" AND NOT t.name CONTAINS \"$\" "
+					+ "AND NOT ab.name CONTAINS \"$\" RETURN ab,t");
+
+			String fqn = null;
+			String sourceFileName = null;
+			String name = null;
+			List<Node> nodes = new ArrayList<>();
+			Node n = null;
+			String json = null;
+
+			while(result.hasNext()) {
+				Record res = result.next();
+				//System.out.println(res.get("ab").get("sourceFileName"));
+
+				fqn = res.get("ab").get("fqn").toString();
+				sourceFileName = res.get("ab").get("sourceFileName").toString();
+				name = res.get("ab").get("name").toString();
+				
+				n = new Node(fqn, sourceFileName, name);
+
+				nodes.add(n);
+
+			}
+			
+			ObjectMapper objectMapper = new ObjectMapper();
+			json = objectMapper.writeValueAsString(nodes);
+			System.out.println(json);
+
+			return json;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "db connection error";
+
 	}
+	
+	
+	public void createRelations() {
+		
+	}
+	
+	
 }

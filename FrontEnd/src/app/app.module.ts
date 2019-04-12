@@ -10,6 +10,10 @@ import { FqnNameComponent } from './fqn-name/fqn-name.component';
 import { SearchComponent } from './search/search.component';
 import {TextFieldModule} from '@angular/cdk/text-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+
+
+
 
 
 @NgModule({
@@ -26,7 +30,9 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatListModule,
     TextFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
+    
 
   ],
   providers: [FqnNameComponent],
