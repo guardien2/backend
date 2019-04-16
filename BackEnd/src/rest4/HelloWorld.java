@@ -1,17 +1,32 @@
 package rest4;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+import org.neo4j.driver.v1.AuthTokens;
+import org.neo4j.driver.v1.Driver;
+import org.neo4j.driver.v1.GraphDatabase;
+import org.neo4j.driver.v1.Record;
+import org.neo4j.driver.v1.Session;
+import org.neo4j.driver.v1.StatementResult;
 
 //import java.util.ArrayList;
 //import java.util.List;
 
-import javax.ws.rs.*;
-
-import org.neo4j.driver.v1.*;
+import org.neo4j.driver.v1.types.Path.Segment;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @Path("admin")
 
@@ -31,7 +46,7 @@ public class HelloWorld {
 	@Path("{id}")
 	@Produces("application/json")
 	public Person hamtaPerson(@PathParam("id") int id) {
-		System.out.println(String.format("Söker efter person med id %d", id));
+		System.out.println(String.format("Sï¿½ker efter person med id %d", id));
 		Person p = new Person(id, "John", "Eriksson", 1995);
 		return p;
 	}
@@ -80,33 +95,59 @@ public class HelloWorld {
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 		try (Session session = driver.session()) {
 			StatementResult result = session.run(
-					"MATCH (a:Artifact)-[:CONTAINS]->(t:Type) RETURN a.fileName AS artefakt, count(t) AS klasser ORDER BY klasser DESC");
+					"MATCH q=(p:Server)-[:DEPENDS_ON*..5]->(a:Type:CSN {valid: true}) WHERE upper(p.name) =~ \".*KN50.*\" AND NOT a.fqn CONTAINS \"entities\" AND NOT a.fqn CONTAINS \"worksets\" AND NOT a.name CONTAINS \"$\" RETURN p,a,q");
 
-			String artefakt = null;
-			String klasser = null;
+			String sourceFileName = null;
+			String fqn = null;
 			String json = null;
-			List<Name> nameList = new ArrayList<>();
+			List<FullExpansion> nameList = new ArrayList<>();
 
-			Name n = null;
+			FullExpansion n = null;
+			FullExpansion endNode = null;
+			// Jackson ObjectMapper used to serialize java object as JSON output
+			ObjectMapper objectMapper = new ObjectMapper();
+			// ObjectNode jNode = (ObjectNode) objectMapper.createObjectNode();
 			// System.out.println(result.list());
+
+			org.neo4j.driver.v1.types.Path p;
 			// loop through all data
-			for (int i = 0; i < 10; i++) {
+			while (result.hasNext()) {
+				// ObjectNode jNode = (ObjectNode) objectMapper.createObjectNode();
 				Record res = result.next();
-				System.out.println(res.toString());
+				// annars tror den den är jackson path
+				p = res.get("q").asPath();
+				// System.out.println(res.get("q"));
+				for (Segment segment : p) {
+					// System.out.println(segment.start());
+					// System.out.println(segment.end());
+					// System.out.println(segment.relationship());
+					// endNode = new FullExpansion(segment.end().toString());
 
-				artefakt = res.get("artefakt").toString();
-				klasser = res.get("klasser").toString();
-				n = new Name(artefakt, klasser);
+					List<String> relationList = new ArrayList<String>();
 
-				nameList.add(n);
+					relationList.add(segment.start().toString());
+					relationList.add(segment.end().toString());
+
+					// n = new FullExpansion(segment.start().toString() ,endNode);
+					
+					ListIterator<String> it = relationList.listIterator();
+
+					while (it.hasNext()) {
+						  
+						   if(it.equals(it.next())) {
+							   it.remove();
+						   }
+							   
+						}
+				
+
+					// nameList.add(n);
+				}
 
 			}
 
-			// Jackson ObjectMapper used to serialize java object as JSON output
-			ObjectMapper objectMapper = new ObjectMapper();
-
 			json = objectMapper.writeValueAsString(nameList);
-			System.out.println(json);
+			// System.out.println(json);
 
 			return json;
 
@@ -127,7 +168,7 @@ public class HelloWorld {
 
 		try (Session session = driver.session()) {
 			StatementResult result = session.run("MATCH (ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) "
-					+ "WHERE upper(t.name) CONTAINS \"" + test + "\" AND NOT t.name CONTAINS \"$\" "
+					+ "WHERE upper(t.name) CONTAINS \"" + test.toUpperCase() + "\" AND NOT t.name CONTAINS \"$\" "
 					+ "AND NOT ab.name CONTAINS \"$\" RETURN ab,t");
 
 			String fqn = null;
@@ -137,38 +178,36 @@ public class HelloWorld {
 			Node n = null;
 			String json = null;
 
-			while(result.hasNext()) {
+			while (result.hasNext()) {
 				Record res = result.next();
-				//System.out.println(res.get("ab").get("sourceFileName"));
+				// System.out.println(res.get("ab").get("sourceFileName"));
 
 				fqn = res.get("ab").get("fqn").toString();
 				sourceFileName = res.get("ab").get("sourceFileName").toString();
 				name = res.get("ab").get("name").toString();
-				
+
 				n = new Node(fqn, sourceFileName, name);
 
 				nodes.add(n);
 
 			}
-			
+
 			ObjectMapper objectMapper = new ObjectMapper();
 			json = objectMapper.writeValueAsString(nodes);
 			System.out.println(json);
 
 			return json;
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return "db connection error";
 
 	}
-	
-	
+
 	public void createRelations() {
-		
+
 	}
-	
-	
+
 }
