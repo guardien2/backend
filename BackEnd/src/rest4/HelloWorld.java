@@ -22,10 +22,12 @@ import org.neo4j.driver.v1.StatementResult;
 //import java.util.List;
 
 import org.neo4j.driver.v1.types.Path.Segment;
-
+import org.neo4j.driver.v1.types.Relationship;
+import org.neo4j.driver.v1.types.Node;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @Path("admin")
@@ -97,54 +99,70 @@ public class HelloWorld {
 			StatementResult result = session.run(
 					"MATCH q=(p:Server)-[:DEPENDS_ON*..5]->(a:Type:CSN {valid: true}) WHERE upper(p.name) =~ \".*KN50.*\" AND NOT a.fqn CONTAINS \"entities\" AND NOT a.fqn CONTAINS \"worksets\" AND NOT a.name CONTAINS \"$\" RETURN p,a,q");
 
-			String sourceFileName = null;
-			String fqn = null;
+
 			String json = null;
 			List<FullExpansion> nameList = new ArrayList<>();
 
-			FullExpansion n = null;
-			FullExpansion endNode = null;
+			
 			// Jackson ObjectMapper used to serialize java object as JSON output
 			ObjectMapper objectMapper = new ObjectMapper();
-			// ObjectNode jNode = (ObjectNode) objectMapper.createObjectNode();
-			// System.out.println(result.list());
 
 			org.neo4j.driver.v1.types.Path p;
 			// loop through all data
+
+			List<Relationship> relationshipList = new ArrayList<>();
+			List<org.neo4j.driver.v1.types.Node> nodeList = new ArrayList<>();
+			
 			while (result.hasNext()) {
 				// ObjectNode jNode = (ObjectNode) objectMapper.createObjectNode();
 				Record res = result.next();
 				// annars tror den den är jackson path
 				p = res.get("q").asPath();
-				// System.out.println(res.get("q"));
+				//System.out.println(res.get("q"));
+				
 				for (Segment segment : p) {
-					// System.out.println(segment.start());
-					// System.out.println(segment.end());
-					// System.out.println(segment.relationship());
-					// endNode = new FullExpansion(segment.end().toString());
-
-					List<String> relationList = new ArrayList<String>();
-
-					relationList.add(segment.start().toString());
-					relationList.add(segment.end().toString());
-
-					// n = new FullExpansion(segment.start().toString() ,endNode);
 					
-					ListIterator<String> it = relationList.listIterator();
-
-					while (it.hasNext()) {
-						  
-						   if(it.equals(it.next())) {
-							   it.remove();
-						   }
-							   
+					if(!relationshipList.contains(segment.relationship())) {
+					 relationshipList.add(segment.relationship());
+					}
+					if(!nodeList.contains(segment.start())) {
+						nodeList.add(segment.start());
+						if(!nodeList.contains(segment.end())) {
+							nodeList.add(segment.end());
 						}
+						
+					}
+
+				}
+				
 				
 
-					// nameList.add(n);
-				}
-
 			}
+			
+			for (Relationship rList :relationshipList ) {
+	
+				for(Node nList : nodeList) {
+					String startNode = rList.startNodeId()+"";
+					String endNode = rList.endNodeId()+"";
+					List<NestedJson> nextList = new ArrayList<>();
+					
+					
+					if(rList.startNodeId() == nList.id()) {
+						NestedJson start = new NestedJson(startNode);
+						NestedJson Next = new NestedJson(endNode);
+						nextList.add(Next);
+						
+						
+						
+						System.out.println(rList.startNodeId()+ " = " + nList.id());
+					}
+					
+				}
+				
+			}
+			
+			System.out.println(relationshipList);
+			System.out.println(nodeList);
 
 			json = objectMapper.writeValueAsString(nameList);
 			// System.out.println(json);
@@ -156,6 +174,40 @@ public class HelloWorld {
 		}
 
 		return "Cant Connect to DB";
+	}
+
+	@GET
+	@Path("nested")
+	@Produces("application/json")
+	public String nestedTest() {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
+		NestedJson test = new NestedJson("Hej");
+		NestedJson testnext = new NestedJson("noob");
+		NestedJson testnext2 = new NestedJson("fisk");
+		try {
+			List<NestedJson> nextList = new ArrayList<>();
+			List<NestedJson> nextList2 = new ArrayList<>();
+			// lägger in i listan
+			nextList.add(testnext);
+			nextList2.add(testnext2);
+
+			// lägger in listan i setnext i klassen
+			test.setNext(nextList);
+
+			for (NestedJson s : nextList) {
+				s.setNext(nextList2);
+			}
+
+			String json = mapper.writeValueAsString(test);
+
+			return json;
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return "error";
 
 	}
 
@@ -174,8 +226,8 @@ public class HelloWorld {
 			String fqn = null;
 			String sourceFileName = null;
 			String name = null;
-			List<Node> nodes = new ArrayList<>();
-			Node n = null;
+			List<UsedBy> nodes = new ArrayList<>();
+			UsedBy n = null;
 			String json = null;
 
 			while (result.hasNext()) {
@@ -186,7 +238,7 @@ public class HelloWorld {
 				sourceFileName = res.get("ab").get("sourceFileName").toString();
 				name = res.get("ab").get("name").toString();
 
-				n = new Node(fqn, sourceFileName, name);
+				n = new UsedBy(fqn, sourceFileName, name);
 
 				nodes.add(n);
 
