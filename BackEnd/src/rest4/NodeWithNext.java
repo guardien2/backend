@@ -6,35 +6,39 @@ import java.util.List;
 import org.neo4j.driver.v1.types.Node;
 
 public class NodeWithNext {
-	
+	Long id;
 	Node node;
 	String sourceFileName;
 	String fqn;
 	String fileName;
 	String name;
 	
+	
 	List<NodeWithNext> dependsOn = new ArrayList<>();
+	List<NodeWithNext> parents = new ArrayList<>();
 	
 	public NodeWithNext(Node n) {
+		this.id = n.id();
 		this.node = n;
 		this.sourceFileName = n.get("sourceFileName").toString();
 		this.fqn = n.get("fqn").toString();
 		this.fileName = n.get("fileName").toString();
 		this.name = n.get("name").toString();
+		
 	}
 	
 	
 
-	public Long getNodeID() {
-		return node.id();
-	}
 
 	
+	public Long getId() {
+		return id;
+	}
+
+
 	public List<NodeWithNext> getDependsOn() {
 		return dependsOn;
 	}
-
-
 
 	public String getSourceFileName() {
 		return sourceFileName;

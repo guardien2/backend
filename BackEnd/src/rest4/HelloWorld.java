@@ -160,14 +160,16 @@ public class HelloWorld {
 	}
 
 	@GET
-	@Path("tree")
+	@Path("tree/{treeString}")
 	@Produces("application/json")
-	public String BuildTheTree() {
+	public String BuildTheTree(@PathParam("treeString") String treeString) {
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 		try (Session session = driver.session()) {
 
-			StatementResult result = session.run(
-					"MATCH q=(p:Server)-[:DEPENDS_ON*..5]->(a:Type:CSN {valid: true}) WHERE upper(p.name) =~ \".*KN50.*\" AND NOT a.fqn CONTAINS \"entities\" AND NOT a.fqn CONTAINS \"worksets\" AND NOT a.name CONTAINS \"$\" RETURN p,a,q");
+			StatementResult result = session
+					.run("MATCH q=(p:Server)-[:DEPENDS_ON*..5]->(a:Type:CSN {valid: true}) WHERE upper(p.name) =~ \".*"
+							+ treeString.toUpperCase()
+							+ ".*\" AND NOT a.fqn CONTAINS \"entities\" AND NOT a.fqn CONTAINS \"worksets\" AND NOT a.name CONTAINS \"$\" RETURN p,a,q");
 
 			String json = null;
 
@@ -177,6 +179,7 @@ public class HelloWorld {
 
 			List<Relationship> relationshipList = new ArrayList<>();
 			List<NodeWithNext> nodes = new ArrayList<>();
+			List<NodeWithNext> roots = new ArrayList<>();
 
 			// fyller lista med noder & lista med relationer
 			while (result.hasNext()) {
@@ -200,16 +203,28 @@ public class HelloWorld {
 
 			// bygger relationerna
 			for (NodeWithNext nwn : nodes) {
+				System.out.println(nwn.id);
 				for (Relationship r : relationshipList) {
 					if (nwn.node.id() == r.startNodeId()) {
-						nwn.nextList.add(getNodeFromID(nodes, r.endNodeId()));
+						nwn.dependsOn.add(getNodeFromID(nodes, r.endNodeId()));
 					}
+
+					if (nwn.node.id() == r.endNodeId()) {
+						nwn.parents.add(getNodeFromID(nodes, r.startNodeId()));
+					}
+
+				}
+				if (nwn.dependsOn.isEmpty()) {
+					nwn.dependsOn = null;
+				}
+				if (nwn.parents.isEmpty()) {
+					roots.add(nwn);
 				}
 			}
 
 			// json
 			objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-			json = objectMapper.writeValueAsString(nodes);
+			json = objectMapper.writeValueAsString(roots);
 			return json;
 
 		} catch (Exception e) {
@@ -221,7 +236,7 @@ public class HelloWorld {
 
 	// kollar om noden med ett visst ID finns i listan
 	public boolean containsNodeID(final List<NodeWithNext> list, final Long id) {
-		return list.stream().map(NodeWithNext::getNodeID).filter(id::equals).findFirst().isPresent();
+		return list.stream().map(NodeWithNext::getId).filter(id::equals).findFirst().isPresent();
 	}
 
 	// hittar och ger noden i listan som har rätt ID
@@ -237,16 +252,35 @@ public class HelloWorld {
 	}
 
 	@GET
-	@Path("usedby/{test}")
+	@Path("search/{test}/{searchString}")
 	@Produces("application/json")
-	public String UsedBy(@PathParam("test") String test) {
+	public String UsedBy(@PathParam("test") String test, @PathParam("searchString") String searchString) {
 		System.out.println(test);
+		System.out.println(searchString);
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
+		String cypherQuery = "";
+		if (test.equals("usedby")) {
+			cypherQuery = "MATCH (ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) "
+					+ "WHERE upper(t.name) CONTAINS \"" + searchString.toUpperCase()
+					+ "\" AND NOT t.name CONTAINS \"$\" " + "AND NOT ab.name CONTAINS \"$\" RETURN ab,t";
+		} else if (test.equals("fullexpanison")) {
+			cypherQuery = "MATCH q=(p:Server)-[:DEPENDS_ON*..5]->(a:Type:CSN {valid: true}) "
+					+ "WHERE upper(p.name) =~ \".*" + searchString.toUpperCase()
+					+ ".*\" AND NOT a.fqn CONTAINS \"entities\"AND NOT a.fqn CONTAINS \"worksets\" "
+					+ "AND NOT a.name CONTAINS \"$\" RETURN p,a,q";
+		} else if (test.equals("crud")) {
+			// TODO
+		} else if (test.equals("flowin")) {
+			// TODO
+		} else if (test.equals("flowout")) {
+			// TODO
+		} else {
+			// something went wrong
+			System.out.println("hehe xD");
+		}
 
 		try (Session session = driver.session()) {
-			StatementResult result = session.run("MATCH (ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) "
-					+ "WHERE upper(t.name) CONTAINS \"" + test.toUpperCase() + "\" AND NOT t.name CONTAINS \"$\" "
-					+ "AND NOT ab.name CONTAINS \"$\" RETURN ab,t");
+			StatementResult result = session.run(cypherQuery);
 
 			String fqn = null;
 			String sourceFileName = null;

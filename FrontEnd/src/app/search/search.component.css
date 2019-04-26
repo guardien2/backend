@@ -1,0 +1,27 @@
+#wrapper {
+     overflow: auto; /* so the size of the wrapper is alway the size of the longest content */
+
+}
+
+#typeDropDown{
+    float: left;
+    margin-left: 30px;
+    text-align:center;
+}
+
+#searchDropDown {
+    float: left;
+    text-align:center;
+}
+#searchInput {
+    float: left;
+    text-align:center;
+    margin-top: 20px;
+}
+
+#searchButton {
+    float: left;  
+    display: block; 
+    text-align:center;
+    margin-top: 10px;
+}
