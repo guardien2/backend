@@ -160,9 +160,9 @@ public class HelloWorld {
 	}
 
 	@GET
-	@Path("tree/{type}/{searchValue}")
+	@Path("tree/{type}/{searchValue}/{graphBool}")
 	@Produces("application/json")
-	public String BuildTheTree(@PathParam("type") String type, @PathParam("searchValue") String searchValue) {
+	public String BuildTheTree(@PathParam("type") String type, @PathParam("searchValue") String searchValue, @PathParam("graphBool") Boolean graphBool) {
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 
 		String cypherQuery = "";
@@ -268,8 +268,8 @@ public class HelloWorld {
 			}
 			objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
-			boolean D3 = true;
-			if (D3) {
+			
+			if (graphBool) {
 				for (NodeWithNext n : roots) {
 					headNode.children.add(n);
 				}
@@ -279,8 +279,6 @@ public class HelloWorld {
 			} else {
 				json = objectMapper.writeValueAsString(roots);
 			}
-
-			// json
 
 			return json;
 

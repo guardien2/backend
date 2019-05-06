@@ -1,5 +1,5 @@
 //empty the D3-tree div
-function emptyDiv(){
+function RemoveTree(){
     document.getElementById("D3TreeDiv").innerHTML = "";
 }
 
@@ -8,7 +8,7 @@ function emptyDiv(){
 function DrawD3Tree(searchValue) {
     alert(searchValue);
     console.log(searchValue);
-    emptyDiv();
+    RemoveTree();
 
     // ************** Generate the tree diagram	 *****************
     var margin = { top: 50, right: 10, bottom: 20, left: 10 },

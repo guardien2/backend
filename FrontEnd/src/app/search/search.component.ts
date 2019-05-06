@@ -6,6 +6,7 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { stringify } from '@angular/core/src/util';
 
 declare function DrawD3Tree(searchValue): any;
+declare function RemoveTree(): any;
 
 interface TreeNode {
     name: any;
@@ -95,10 +96,11 @@ export class SearchComponent implements OnInit {
 
     searchClicked(newInput: string) {
         this.lastInput = newInput;
+        RemoveTree();
 
         if (this.selectedValue == 'usedby') {
 
-            this.GetUsedByFromREST(newInput);
+            this.GetTreeFromREST(newInput);
             this.showFullExpansion = false;
             this.showUsedBy = true;
 
@@ -113,26 +115,25 @@ export class SearchComponent implements OnInit {
     }
 
     ViewD3Tree(newInput: string) {
-        
-        DrawD3Tree("http://localhost:9080/BackEnd/app/admin/tree/" + this.selectedValue + "/" + newInput);
+        this.showUsedBy = false;
+        this.showFullExpansion = false;
+        DrawD3Tree("http://localhost:9080/BackEnd/app/admin/tree/" + this.selectedValue + "/" + newInput + "/"+true);
 
     }
 
 
-    GetUsedByFromREST(value: string) {
-        
+    /*GetUsedByFromREST(value: string) {
         this.http.get('http://localhost:9080/BackEnd/app/admin/search/' + this.selectedValue + '/' + value).subscribe((data: any[]) => {
             this.nodes = data;
             this.dataSource = new MatTableDataSource(data);
             this.displayedColumns = this.columnNames.map(x => x.id);
             return data;
         });
-        
 
-    }
+    }*/
 
     GetTreeFromREST(value: string) {
-        this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + this.selectedValue + '/' + value + '/').subscribe((data: any[]) => {
+        this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + this.selectedValue + '/' + value + '/' + false).subscribe((data: any[]) => {
             this.TreeDataSource.data = data;
         });
     }
