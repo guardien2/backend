@@ -19,9 +19,21 @@
     margin-top: 20px;
 }
 
+#showTree {
+    float: left;  
+    display: block; 
+    text-align:center;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
 #searchButton {
     float: left;  
     display: block; 
     text-align:center;
     margin-top: 10px;
+}
+
+#D3TreeDiv {
+    background-color: bisque;
 }

@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
+import { stringify } from '@angular/core/src/util';
+
+declare function DrawD3Tree(searchValue): any;
 
 interface TreeNode {
     name: any;
@@ -34,7 +37,7 @@ export class SearchComponent implements OnInit {
     private transformer = (node: TreeNode, level: number) => {
         return {
             expandable: !!node.children && node.children.length > 0,
-            name: node.name,            
+            name: node.name,
             level: level,
         };
     }
@@ -70,9 +73,9 @@ export class SearchComponent implements OnInit {
     name = "";
     selectedValue = "";
     typeSlectedValue = "";
+    typeSelectedRest = "";
     showUsedBy: boolean = false;
     showFullExpansion: boolean = false;
-    showRelation: boolean = false;
     dataSource: any;
     displayedColumns = [];
 
@@ -94,44 +97,54 @@ export class SearchComponent implements OnInit {
         this.lastInput = newInput;
 
         if (this.selectedValue == 'usedby') {
-            
-            
-            this.http.get('http://localhost:9080/BackEnd/app/admin/search/' + this.selectedValue + '/' + newInput).subscribe((data: any[]) => {
-                this.nodes = data;
-                this.dataSource = new MatTableDataSource(data);
-                 this.displayedColumns = this.columnNames.map(x => x.id);
-                //          console.log(this.foods.values);
 
-            });
-            
-       //     this.showUsedBy = true;
-            //   this.TreeDataSource = null;
+            this.GetUsedByFromREST(newInput);
             this.showFullExpansion = false;
-            this.showRelation = false;
             this.showUsedBy = true;
-           
+
         }
 
         if (this.selectedValue == 'fullexpansion') {
             this.showUsedBy = false;
-            this.showRelation = false;   
-                this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + newInput + '/').subscribe((data: any[]) => {
-                this.TreeDataSource.data = data;
-               });
-           this.showFullExpansion = true;
+            this.GetTreeFromREST(newInput);
+            this.showFullExpansion = true;
         }
 
     }
 
-    
+    ViewD3Tree(newInput: string) {
+        
+        DrawD3Tree("http://localhost:9080/BackEnd/app/admin/tree/" + this.selectedValue + "/" + newInput);
 
-    typeSelected(event) {
-
-        this.typeSlectedValue = event.value;
     }
 
-    selected(event) {
 
+    GetUsedByFromREST(value: string) {
+        
+        this.http.get('http://localhost:9080/BackEnd/app/admin/search/' + this.selectedValue + '/' + value).subscribe((data: any[]) => {
+            this.nodes = data;
+            this.dataSource = new MatTableDataSource(data);
+            this.displayedColumns = this.columnNames.map(x => x.id);
+            return data;
+        });
+        
+
+    }
+
+    GetTreeFromREST(value: string) {
+        this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + this.selectedValue + '/' + value + '/').subscribe((data: any[]) => {
+            this.TreeDataSource.data = data;
+        });
+    }
+
+
+
+
+
+    selected(event) {
+        // alert(event.value);
         this.selectedValue = event.value;
+
+
     }
 }

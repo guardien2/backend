@@ -11,7 +11,6 @@ import { SearchComponent } from './search/search.component';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-import { TreeComponent } from './tree/tree.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -26,8 +25,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     declarations: [
         AppComponent,
         FqnNameComponent,
-        SearchComponent,
-        TreeComponent
+        SearchComponent
 
 
 

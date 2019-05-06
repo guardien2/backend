@@ -160,16 +160,35 @@ public class HelloWorld {
 	}
 
 	@GET
-	@Path("tree/{treeString}")
+	@Path("tree/{type}/{searchValue}")
 	@Produces("application/json")
-	public String BuildTheTree(@PathParam("treeString") String treeString) {
+	public String BuildTheTree(@PathParam("type") String type, @PathParam("searchValue") String searchValue) {
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
+
+		String cypherQuery = "";
+		if (type.equals("usedby")) {
+			cypherQuery = "MATCH q=(ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) "
+					+ "WHERE upper(t.name) CONTAINS \"" + searchValue.toUpperCase()
+					+ "\" AND NOT t.name CONTAINS \"$\" " + "AND NOT ab.name CONTAINS \"$\" RETURN ab,t,q";
+		} else if (type.equals("fullexpansion")) {
+			cypherQuery = "MATCH q=(p:Server)-[:DEPENDS_ON*..5]->(a:Type:CSN {valid: true}) "
+					+ "WHERE upper(p.name) =~ \".*" + searchValue.toUpperCase()
+					+ ".*\" AND NOT a.fqn CONTAINS \"entities\"AND NOT a.fqn CONTAINS \"worksets\" "
+					+ "AND NOT a.name CONTAINS \"$\" RETURN p,a,q";
+		} else if (type.equals("crud")) {
+			// TODO
+		} else if (type.equals("flowin")) {
+			// TODO
+		} else if (type.equals("flowout")) {
+			// TODO
+		} else {
+			// something went wrong
+			System.out.println("hehe xD");
+		}
+
 		try (Session session = driver.session()) {
 
-			StatementResult result = session
-					.run("MATCH q=(p:Server)-[:DEPENDS_ON*..5]->(a:Type:CSN {valid: true}) WHERE upper(p.name) =~ \".*"
-							+ treeString.toUpperCase()
-							+ ".*\" AND NOT a.fqn CONTAINS \"entities\" AND NOT a.fqn CONTAINS \"worksets\" AND NOT a.name CONTAINS \"$\" RETURN p,a,q");
+			StatementResult result = session.run(cypherQuery);
 
 			String json = null;
 
@@ -203,46 +222,66 @@ public class HelloWorld {
 					}
 				}
 			}
+			if (type.equals("fullexpansion")) {
+				// bygger relationerna
+				for (NodeWithNext nwn : nodes) {
+					System.out.println(nwn.id);
+					for (Relationship r : relationshipList) {
+						if (nwn.node.id() == r.startNodeId()) {
+							nwn.children.add(getNodeFromID(nodes, r.endNodeId()));
+						}
 
-			// bygger relationerna
-			for (NodeWithNext nwn : nodes) {
-				System.out.println(nwn.id);
-				for (Relationship r : relationshipList) {
-					if (nwn.node.id() == r.startNodeId()) {
-						nwn.children.add(getNodeFromID(nodes, r.endNodeId()));
+						if (nwn.node.id() == r.endNodeId()) {
+							nwn.parents.add(getNodeFromID(nodes, r.startNodeId()));
+						}
+
 					}
-
-					if (nwn.node.id() == r.endNodeId()) {
-						nwn.parents.add(getNodeFromID(nodes, r.startNodeId()));
+					if (nwn.children.isEmpty()) {
+						nwn.children = null;
 					}
+					if (nwn.parents.isEmpty()) {
+						roots.add(nwn);
+					}
+				}
+			} 
+			else if(type.equals("usedby")){
+				// bygger relationerna
+				for (NodeWithNext nwn : nodes) {
+					System.out.println(nwn.id);
+					for (Relationship r : relationshipList) {
+						if (nwn.node.id() == r.endNodeId()) {
+							nwn.children.add(getNodeFromID(nodes, r.startNodeId()));
+						}
 
-				}
-				if (nwn.children.isEmpty()) {
-					nwn.children = null;
-				}
-				if (nwn.parents.isEmpty()) {
-					roots.add(nwn);
+						if (nwn.node.id() == r.startNodeId()) {
+							nwn.parents.add(getNodeFromID(nodes, r.endNodeId()));
+						}
+
+					}
+					if (nwn.children.isEmpty()) {
+						nwn.children = null;
+					}
+					if (nwn.parents.isEmpty()) {
+						roots.add(nwn);
+					}
 				}
 			}
-			
 			objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-			
+
 			boolean D3 = true;
-			if(D3) {
-				for(NodeWithNext n : roots) {
+			if (D3) {
+				for (NodeWithNext n : roots) {
 					headNode.children.add(n);
 				}
 				headList.add(headNode);
 				json = objectMapper.writeValueAsString(headList);
-				
-			}else {
+
+			} else {
 				json = objectMapper.writeValueAsString(roots);
 			}
-			
-			
+
 			// json
-			
-			
+
 			return json;
 
 		} catch (Exception e) {
@@ -273,7 +312,7 @@ public class HelloWorld {
 	@Path("search/{test}/{searchString}")
 	@Produces("application/json")
 	public String UsedBy(@PathParam("test") String test, @PathParam("searchString") String searchString) {
-		
+
 		System.out.println(test);
 		System.out.println(searchString);
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
