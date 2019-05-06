@@ -180,6 +180,9 @@ public class HelloWorld {
 			List<Relationship> relationshipList = new ArrayList<>();
 			List<NodeWithNext> nodes = new ArrayList<>();
 			List<NodeWithNext> roots = new ArrayList<>();
+			List<NodeWithNext> headList = new ArrayList<>();
+
+			NodeWithNext headNode = new NodeWithNext();
 
 			// fyller lista med noder & lista med relationer
 			while (result.hasNext()) {
@@ -206,7 +209,7 @@ public class HelloWorld {
 				System.out.println(nwn.id);
 				for (Relationship r : relationshipList) {
 					if (nwn.node.id() == r.startNodeId()) {
-						nwn.dependsOn.add(getNodeFromID(nodes, r.endNodeId()));
+						nwn.children.add(getNodeFromID(nodes, r.endNodeId()));
 					}
 
 					if (nwn.node.id() == r.endNodeId()) {
@@ -214,17 +217,32 @@ public class HelloWorld {
 					}
 
 				}
-				if (nwn.dependsOn.isEmpty()) {
-					nwn.dependsOn = null;
+				if (nwn.children.isEmpty()) {
+					nwn.children = null;
 				}
 				if (nwn.parents.isEmpty()) {
 					roots.add(nwn);
 				}
 			}
-
-			// json
+			
 			objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-			json = objectMapper.writeValueAsString(roots);
+			
+			boolean D3 = true;
+			if(D3) {
+				for(NodeWithNext n : roots) {
+					headNode.children.add(n);
+				}
+				headList.add(headNode);
+				json = objectMapper.writeValueAsString(headList);
+				
+			}else {
+				json = objectMapper.writeValueAsString(roots);
+			}
+			
+			
+			// json
+			
+			
 			return json;
 
 		} catch (Exception e) {
@@ -255,6 +273,7 @@ public class HelloWorld {
 	@Path("search/{test}/{searchString}")
 	@Produces("application/json")
 	public String UsedBy(@PathParam("test") String test, @PathParam("searchString") String searchString) {
+		
 		System.out.println(test);
 		System.out.println(searchString);
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
@@ -285,8 +304,8 @@ public class HelloWorld {
 			String fqn = null;
 			String sourceFileName = null;
 			String name = null;
-			List<NodeUsedBy> nodes = new ArrayList<>();
-			NodeUsedBy n = null;
+			List<UsedBy> nodes = new ArrayList<>();
+			UsedBy n = null;
 			String json = null;
 
 			while (result.hasNext()) {
@@ -297,7 +316,7 @@ public class HelloWorld {
 				sourceFileName = res.get("ab").get("sourceFileName").toString();
 				name = res.get("ab").get("name").toString();
 
-				n = new NodeUsedBy(fqn, sourceFileName, name);
+				n = new UsedBy(fqn, sourceFileName, name);
 
 				nodes.add(n);
 

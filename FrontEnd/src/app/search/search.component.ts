@@ -10,7 +10,7 @@ interface TreeNode {
     sourceFileName: any;
     fqn: any;
     fileName: any;
-    dependsOn?: TreeNode[];
+    children?: TreeNode[];
 }
 
 interface ExampleFlatNode {
@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
 
     private transformer = (node: TreeNode, level: number) => {
         return {
-            expandable: !!node.dependsOn && node.dependsOn.length > 0,
+            expandable: !!node.children && node.children.length > 0,
             name: node.name,            
             level: level,
         };
@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit {
 
     treeControl = new FlatTreeControl<ExampleFlatNode>(node => node.level, node => node.expandable);
 
-    treeFlattener = new MatTreeFlattener(this.transformer, node => node.level, node => node.expandable, node => node.dependsOn);
+    treeFlattener = new MatTreeFlattener(this.transformer, node => node.level, node => node.expandable, node => node.children);
 
     TreeDataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
@@ -70,8 +70,9 @@ export class SearchComponent implements OnInit {
     name = "";
     selectedValue = "";
     typeSlectedValue = "";
-    showTable: boolean = false;
-    showTree: boolean = false;
+    showUsedBy: boolean = false;
+    showFullExpansion: boolean = false;
+    showRelation: boolean = false;
     dataSource: any;
     displayedColumns = [];
 
@@ -103,23 +104,26 @@ export class SearchComponent implements OnInit {
 
             });
             
-       //     this.showTable = true;
+       //     this.showUsedBy = true;
             //   this.TreeDataSource = null;
-            this.showTree = false;
-            this.showTable = true;
+            this.showFullExpansion = false;
+            this.showRelation = false;
+            this.showUsedBy = true;
            
         }
 
         if (this.selectedValue == 'fullexpansion') {
-            this.showTable = false;
-
-                this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + this.selectedValue + '/').subscribe((data: any[]) => {
+            this.showUsedBy = false;
+            this.showRelation = false;   
+                this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + newInput + '/').subscribe((data: any[]) => {
                 this.TreeDataSource.data = data;
-            });
-           this.showTree = true;
+               });
+           this.showFullExpansion = true;
         }
 
     }
+
+    
 
     typeSelected(event) {
 

@@ -1,6 +1,6 @@
 package rest4;
 
-public class Node {
+public class UsedBy {
 	
 	private String fqn;
 //	private boolean valid;
@@ -10,7 +10,7 @@ public class Node {
 //	private String byteCodeVersion;
 //	private String md5;
 	
-	public Node(String fqn, String sourceFileName, String name) {
+	public UsedBy(String fqn, String sourceFileName, String name) {
 		this.fqn = fqn;
 		this.sourceFileName = sourceFileName;
 		this.name = name;

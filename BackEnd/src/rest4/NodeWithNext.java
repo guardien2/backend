@@ -14,7 +14,7 @@ public class NodeWithNext {
 	String name;
 	
 	
-	List<NodeWithNext> dependsOn = new ArrayList<>();
+	List<NodeWithNext> children = new ArrayList<>();
 	List<NodeWithNext> parents = new ArrayList<>();
 	
 	public NodeWithNext(Node n) {
@@ -24,6 +24,14 @@ public class NodeWithNext {
 		this.fqn = n.get("fqn").toString();
 		this.fileName = n.get("fileName").toString();
 		this.name = n.get("name").toString();
+		
+	}
+	public NodeWithNext() {
+		this.id = 12251152L;
+		this.sourceFileName = "test";
+		this.fqn = "test";
+		this.fileName = "test";
+		this.name = "hej";
 		
 	}
 	
@@ -36,8 +44,8 @@ public class NodeWithNext {
 	}
 
 
-	public List<NodeWithNext> getDependsOn() {
-		return dependsOn;
+	public List<NodeWithNext> getChildren() {
+		return children;
 	}
 
 	public String getSourceFileName() {
