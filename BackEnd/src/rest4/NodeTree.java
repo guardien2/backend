@@ -1,4 +1,4 @@
-package Tree;
+package rest4;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,15 +7,15 @@ import org.neo4j.driver.v1.types.Node;
 
 public class NodeTree {
 	Long id;
-	public Node node;
+	Node node;
 	String sourceFileName;
 	String fqn;
 	String fileName;
 	String name;
 	
 	
-	public List<NodeTree> children = new ArrayList<>();
-	public List<NodeTree> parents = new ArrayList<>();
+	List<NodeTree> children = new ArrayList<>();
+	List<NodeTree> parents = new ArrayList<>();
 	
 	public NodeTree(Node n) {
 		this.id = n.id();

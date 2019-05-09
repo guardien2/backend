@@ -25,10 +25,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import NodeGraph.NodeGraph;
 import NodeGraph.NodeGraphIds;
 import NodeGraph.NodeGraphLinks;
-import Tree.NodeTree;
 
 @Path("admin")
-
 public class BuildRest {
 
 	private String uri = "bolt://localhost:7687";
@@ -50,6 +48,7 @@ public class BuildRest {
 
 		String cypherQuery = "";
 		if (type.equals("usedby")) {
+			
 			cypherQuery = "MATCH q=(ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) "
 					+ "WHERE upper(t.name) CONTAINS \"" + searchValue.toUpperCase()
 					+ "\" AND NOT t.name CONTAINS \"$\" " + "AND NOT ab.name CONTAINS \"$\" RETURN ab,t,q";
@@ -158,6 +157,7 @@ public class BuildRest {
 					headNode.children.add(n);
 				}
 				headList.add(headNode);
+				System.out.println(headNode);
 				json = objectMapper.writeValueAsString(headList);
 
 			} else {
