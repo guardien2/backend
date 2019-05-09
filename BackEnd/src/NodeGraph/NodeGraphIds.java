@@ -1,4 +1,4 @@
-package rest4;
+package NodeGraph;
 
 import org.neo4j.driver.v1.types.Node;
 
@@ -6,7 +6,7 @@ public class NodeGraphIds {
 	Node node;
 	Long id;
 	String name;
-	NodeGraphIds(Node node){
+	public NodeGraphIds(Node node){
 		this.id = node.id();
 		this.name = node.get("name").toString();
 	}

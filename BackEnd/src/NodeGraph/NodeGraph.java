@@ -1,15 +1,16 @@
-package rest4;
+package NodeGraph;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.neo4j.driver.v1.types.Node;
 
+//class that holds nodes and the links between nodes
 public class NodeGraph {
 	List<NodeGraphIds> nodes = new ArrayList<>();
 	List<NodeGraphLinks> links = new ArrayList<>();
 
-	NodeGraph() {
+	public NodeGraph() {
 
 	}
 

@@ -1,9 +1,9 @@
-package rest4;
+package NodeGraph;
 
 public class NodeGraphLinks {
 	Long source;
 	Long target;
-	
+
 	public Long getSource() {
 		return source;
 	}

@@ -1,23 +1,23 @@
-package rest4;
+package Tree;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.neo4j.driver.v1.types.Node;
 
-public class NodeWithNext {
+public class NodeTree {
 	Long id;
-	Node node;
+	public Node node;
 	String sourceFileName;
 	String fqn;
 	String fileName;
 	String name;
 	
 	
-	List<NodeWithNext> children = new ArrayList<>();
-	List<NodeWithNext> parents = new ArrayList<>();
+	public List<NodeTree> children = new ArrayList<>();
+	public List<NodeTree> parents = new ArrayList<>();
 	
-	public NodeWithNext(Node n) {
+	public NodeTree(Node n) {
 		this.id = n.id();
 		this.node = n;
 		this.sourceFileName = n.get("sourceFileName").toString();
@@ -26,7 +26,7 @@ public class NodeWithNext {
 		this.name = n.get("name").toString();
 		
 	}
-	public NodeWithNext() {
+	public NodeTree() {
 		this.id = 12251152L;
 		this.sourceFileName = "test";
 		this.fqn = "test";
@@ -44,7 +44,7 @@ public class NodeWithNext {
 	}
 
 
-	public List<NodeWithNext> getChildren() {
+	public List<NodeTree> getChildren() {
 		return children;
 	}
 
