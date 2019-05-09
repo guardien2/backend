@@ -4,9 +4,10 @@ import { MatTableDataSource } from '@angular/material';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { stringify } from '@angular/core/src/util';
-
+declare function drawNodeGraph(searchValue): any;
 declare function DrawD3Tree(searchValue): any;
 declare function RemoveTree(): any;
+declare function removeNodeGraph(): any;
 
 interface TreeNode {
     name: any;
@@ -97,6 +98,7 @@ export class SearchComponent implements OnInit {
     searchClicked(newInput: string) {
         this.lastInput = newInput;
         RemoveTree();
+        removeNodeGraph();
 
         if (this.selectedValue == 'usedby') {
 
@@ -140,7 +142,11 @@ export class SearchComponent implements OnInit {
 
 
 
-
+    ViewNodeRelation(newInput: any){
+       this.showUsedBy = false;
+       this.showFullExpansion = false;
+       drawNodeGraph("http://localhost:9080/BackEnd/app/admin/NodeGraph/" + this.selectedValue + "/" + newInput);
+    }
 
     selected(event) {
         // alert(event.value);

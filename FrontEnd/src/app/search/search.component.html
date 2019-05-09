@@ -32,6 +32,9 @@
     <div id="showTree">
         <button mat-stroked-button (click)="ViewD3Tree(newInput.value)">Show graph</button>
     </div>
+    <div id="showNodeRelation">
+        <button mat-stroked-button (click)="ViewNodeRelation(newInput.value)">Show Dynamic graph</button>
+    </div>
 </div>
 <!-- Old usedby table
 <div [hidden]="!showUsedBy">
@@ -88,10 +91,7 @@
         </mat-tree-node>
     </mat-tree>
 </div>
-<div [hidden]="!test">
-    <p>NOOB</p>
-</div>
 
-<div class="demo" id="D3TreeDiv">
 
-</div>
+<div class="demo" id="D3TreeDiv"></div>
+<div class="nodeGraphClass" id="NodeGraphDiv"></div>
