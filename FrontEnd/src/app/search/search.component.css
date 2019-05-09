@@ -34,6 +34,8 @@
     margin-top: 10px;
 }
 
-#D3TreeDiv {
-    background-color: bisque;
+#showNodeRelation {
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
 }

@@ -1,6 +1,8 @@
 //empty the nodeGraphDiv
 function removeNodeGraph(){
+ 
     document.getElementById("NodeGraphDiv").innerHTML = "";
+    
 }
 
 
@@ -11,8 +13,8 @@ function removeNodeGraph(){
         removeNodeGraph();
         alert(searchValue);
         var drag, force, graph, height, l, links, n, nodes, vis, width, _i, _j, _len, _len2, _ref, _ref2;
-        width = 960;
-        height = 500;
+        width = 1920;
+        height = 800;
         /* create the SVG
         */
         vis = d3.select(".nodeGraphClass").append('svg').attr('width', width).attr('height', height);
@@ -23,7 +25,7 @@ function removeNodeGraph(){
         links = vis.selectAll('.link');
         /* initialize the force layout
         */
-        force = d3.layout.force().size([width, height]).charge(-400).linkDistance(40).on('tick', (function () {
+        force = d3.layout.force().size([width, height]).charge(-3000).linkDistance(20).on('tick', (function () {
       /* update nodes and links
       */      nodes.attr('transform', function (d) {
             return "translate(" + d.x + "," + d.y + ")";
