@@ -162,7 +162,8 @@ public class HelloWorld {
 	@GET
 	@Path("tree/{type}/{searchValue}/{graphBool}")
 	@Produces("application/json")
-	public String BuildTheTree(@PathParam("type") String type, @PathParam("searchValue") String searchValue, @PathParam("graphBool") Boolean graphBool) {
+	public String BuildTheTree(@PathParam("type") String type, @PathParam("searchValue") String searchValue,
+			@PathParam("graphBool") Boolean graphBool) {
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 
 		String cypherQuery = "";
@@ -176,7 +177,8 @@ public class HelloWorld {
 					+ ".*\" AND NOT a.fqn CONTAINS \"entities\"AND NOT a.fqn CONTAINS \"worksets\" "
 					+ "AND NOT a.name CONTAINS \"$\" RETURN p,a,q";
 		} else if (type.equals("crud")) {
-			// TODO
+			cypherQuery = "MATCH q=(c:Class:CSN)-[:DECLARES]->(m:Method) WHERE upper(m.name) =~ \"(CREATE|READ|UPDATE|DELETE).*"
+					+ searchValue.toUpperCase() + ".*\" RETURN c,m,q";
 		} else if (type.equals("flowin")) {
 			// TODO
 		} else if (type.equals("flowout")) {
@@ -243,8 +245,7 @@ public class HelloWorld {
 						roots.add(nwn);
 					}
 				}
-			} 
-			else if(type.equals("usedby")){
+			} else if (type.equals("usedby")) {
 				// bygger relationerna
 				for (NodeWithNext nwn : nodes) {
 					System.out.println(nwn.id);
@@ -268,7 +269,6 @@ public class HelloWorld {
 			}
 			objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
-			
 			if (graphBool) {
 				for (NodeWithNext n : roots) {
 					headNode.children.add(n);
@@ -307,73 +307,91 @@ public class HelloWorld {
 	}
 
 	@GET
-	@Path("search/{test}/{searchString}")
+	@Path("NodeGraph/{searchType}/{searchValue}/")
 	@Produces("application/json")
-	public String UsedBy(@PathParam("test") String test, @PathParam("searchString") String searchString) {
+	public String createRelations(@PathParam("searchType") String searchType,
+			@PathParam("searchValue") String searchValue) {
 
-		System.out.println(test);
-		System.out.println(searchString);
-		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 		String cypherQuery = "";
-		if (test.equals("usedby")) {
-			cypherQuery = "MATCH (ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) "
-					+ "WHERE upper(t.name) CONTAINS \"" + searchString.toUpperCase()
-					+ "\" AND NOT t.name CONTAINS \"$\" " + "AND NOT ab.name CONTAINS \"$\" RETURN ab,t";
-		} else if (test.equals("fullexpanison")) {
+		if (searchType.equals("usedby")) {
+			System.out.println("hej");
+			cypherQuery = "MATCH q=(ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) "
+					+ "WHERE upper(t.name) CONTAINS \"" + searchValue.toUpperCase()
+					+ "\" AND NOT t.name CONTAINS \"$\" " + "AND NOT ab.name CONTAINS \"$\" RETURN ab,t,q";
+		} else if (searchType.equals("fullexpansion")) {
 			cypherQuery = "MATCH q=(p:Server)-[:DEPENDS_ON*..5]->(a:Type:CSN {valid: true}) "
-					+ "WHERE upper(p.name) =~ \".*" + searchString.toUpperCase()
+					+ "WHERE upper(p.name) =~ \".*" + searchValue.toUpperCase()
 					+ ".*\" AND NOT a.fqn CONTAINS \"entities\"AND NOT a.fqn CONTAINS \"worksets\" "
 					+ "AND NOT a.name CONTAINS \"$\" RETURN p,a,q";
-		} else if (test.equals("crud")) {
+		} else if (searchType.equals("crud")) {
 			// TODO
-		} else if (test.equals("flowin")) {
+		} else if (searchType.equals("flowin")) {
 			// TODO
-		} else if (test.equals("flowout")) {
+		} else if (searchType.equals("flowout")) {
 			// TODO
 		} else {
 			// something went wrong
 			System.out.println("hehe xD");
 		}
 
+		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 		try (Session session = driver.session()) {
+
 			StatementResult result = session.run(cypherQuery);
 
-			String fqn = null;
-			String sourceFileName = null;
-			String name = null;
-			List<UsedBy> nodes = new ArrayList<>();
-			UsedBy n = null;
 			String json = null;
+			ObjectMapper objectMapper = new ObjectMapper();
 
+			org.neo4j.driver.v1.types.Path p;
+
+			List<Relationship> relationshipList = new ArrayList<>();
+			List<Node> nodes = new ArrayList<>();
+			NodeGraph nodegraph = new NodeGraph();
+			List<NodeGraphLinks> linkList = new ArrayList<>();
+			List<NodeGraphIds> idList = new ArrayList<>();
+
+			// fyller lista med noder & lista med relationer
 			while (result.hasNext()) {
 				Record res = result.next();
-				// System.out.println(res.get("ab").get("sourceFileName"));
+				p = res.get("q").asPath();
+				System.out.print(p);
 
-				fqn = res.get("ab").get("fqn").toString();
-				sourceFileName = res.get("ab").get("sourceFileName").toString();
-				name = res.get("ab").get("name").toString();
-
-				n = new UsedBy(fqn, sourceFileName, name);
-
-				nodes.add(n);
+				for (Segment segment : p) {
+					if (!relationshipList.contains(segment.relationship())) {
+						relationshipList.add(segment.relationship());
+					}
+					if (!nodes.contains(segment.start())) {
+						nodes.add(segment.start());
+					}
+					if (!nodes.contains(segment.end())) {
+						nodes.add(segment.end());
+					}
+				}
 
 			}
+			for (Relationship r : relationshipList) {
+				NodeGraphLinks links = new NodeGraphLinks();
+				links.setSource(r.startNodeId());
+				links.setTarget(r.endNodeId());
+				linkList.add(links);
 
-			ObjectMapper objectMapper = new ObjectMapper();
-			json = objectMapper.writeValueAsString(nodes);
-			System.out.println(json);
+			}
+			for (Node n : nodes) {
+				NodeGraphIds id = new NodeGraphIds(n);
+				idList.add(id);
+			}
+			objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+			nodegraph.setNodes(idList);
+			nodegraph.setLinks(linkList);
+
+			json = objectMapper.writeValueAsString(nodegraph);
 
 			return json;
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		return "db connection error";
-
-	}
-
-	public void createRelations() {
+		return "cannot connect to db";
 
 	}
 

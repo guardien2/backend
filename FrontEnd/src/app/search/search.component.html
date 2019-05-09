@@ -13,7 +13,7 @@
 
     <div id="typeDropDown">
         <mat-form-field>
-            <mat-label>Search type2</mat-label>
+            <mat-label>Search object</mat-label>
             <mat-select (TypeSelectionChange)="selected($event)">
                 <mat-option *ngFor="let t of types" [value]="t.value">
                     {{t.viewValue}}
@@ -30,68 +30,21 @@
         <button mat-stroked-button (click)="searchClicked(newInput.value)">Search</button>
     </div>
     <div id="showTree">
-        <button mat-stroked-button (click)="ViewD3Tree(newInput.value)">Show graph</button>
+        <button mat-stroked-button (click)="ViewD3Tree(newInput.value)">Show static graph</button>
+    </div>
+    <div id="showNodeRelation">
+        <button mat-stroked-button (click)="ViewNodeRelation(newInput.value)">Show dynamic graph</button>
     </div>
 </div>
-<!-- Old usedby table
-<div [hidden]="!showUsedBy">
-    <mat-table #table [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> {{column.value}} </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element[column.id]}} </mat-cell>
-        </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-</div>
--->
-<div [hidden]="!showUsedBy">
-    <mat-tree [dataSource]="TreeDataSource" [treeControl]="treeControl">
-        <!-- This is the tree node template for leaf nodes -->
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-            <!-- use a disabled button to provide padding for tree leaf -->
-            <button mat-icon-button disabled></button>
-            {{node.name}}
-
-        </mat-tree-node>
-        <!-- This is the tree node template for expandable nodes -->
-        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-            <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name">
-                <mat-icon class="mat-icon-rtl-mirror">
-                    {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                </mat-icon>
-            </button>
-            {{node.name}}
-        </mat-tree-node>
-    </mat-tree>
+<div [hidden]="!treeGridDiv">
+    <ejs-treegrid [dataSource]='treeGridData' [treeColumnIndex]='0' childMapping='children'>
+        <e-columns>
+            <e-column field='name' headerText='NAME' textAlign='Left' width=100></e-column>
+            <e-column field='id' headerText='ID' textAlign='Left' width=80></e-column>
+            <e-column field='fqn' headerText='FQN' textAlign='Left' width=200></e-column>
+        </e-columns>
+    </ejs-treegrid>
 </div>
 
-
-<div [hidden]="!showFullExpansion">
-    <mat-tree [dataSource]="TreeDataSource" [treeControl]="treeControl">
-        <!-- This is the tree node template for leaf nodes -->
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-            <!-- use a disabled button to provide padding for tree leaf -->
-            <button mat-icon-button disabled></button>
-            {{node.name}}
-
-        </mat-tree-node>
-        <!-- This is the tree node template for expandable nodes -->
-        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-            <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name">
-                <mat-icon class="mat-icon-rtl-mirror">
-                    {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                </mat-icon>
-            </button>
-            {{node.name}}
-        </mat-tree-node>
-    </mat-tree>
-</div>
-<div [hidden]="!test">
-    <p>NOOB</p>
-</div>
-
-<div class="demo" id="D3TreeDiv">
-
-</div>
+<div class="nodeGraphClass" id="NodeGraphDiv"></div>

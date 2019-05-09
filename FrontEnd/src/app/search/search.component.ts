@@ -4,9 +4,15 @@ import { MatTableDataSource } from '@angular/material';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { stringify } from '@angular/core/src/util';
+import { PageSettingsModel } from '@syncfusion/ej2-angular-treegrid';
+import { treeSampleData } from './treedatasource2';
+import { DataManager } from '@syncfusion/ej2-data';
 
+
+declare function drawNodeGraph(searchValue): any;
+declare function removeNodeGraph(): any;
 declare function DrawD3Tree(searchValue): any;
-declare function RemoveTree(): any;
+declare function RemoveD3Tree(): any;
 
 interface TreeNode {
     name: any;
@@ -30,6 +36,12 @@ interface ExampleFlatNode {
 })
 
 export class SearchComponent implements OnInit {
+
+    //TreeGrid stuff
+    public treeGridData: object[];
+    public pageSettings: PageSettingsModel;
+
+
 
     //Tree
     TREE_DATA: TreeNode[];
@@ -75,8 +87,9 @@ export class SearchComponent implements OnInit {
     selectedValue = "";
     typeSlectedValue = "";
     typeSelectedRest = "";
-    showUsedBy: boolean = false;
-    showFullExpansion: boolean = false;
+    //  showUsedBy: boolean = false;
+    treeGridDiv: boolean = true;
+    //  showFullExpansion: boolean = false;
     dataSource: any;
     displayedColumns = [];
 
@@ -90,62 +103,50 @@ export class SearchComponent implements OnInit {
 
     ngOnInit() {
         this.hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+        // this.treeGridData = treeSampleData;
+        this.pageSettings = { pageSize: 6 };
+        this.treeGridData = [];
     }
+
+
 
     constructor(private http: HttpClient) { }
 
     searchClicked(newInput: string) {
+        this.treeGridDiv = true;
         this.lastInput = newInput;
-        RemoveTree();
+        RemoveD3Tree();
 
-        if (this.selectedValue == 'usedby') {
-
-            this.GetTreeFromREST(newInput);
-            this.showFullExpansion = false;
-            this.showUsedBy = true;
-
-        }
-
-        if (this.selectedValue == 'fullexpansion') {
-            this.showUsedBy = false;
-            this.GetTreeFromREST(newInput);
-            this.showFullExpansion = true;
+        if (this.selectedValue == 'usedby' || this.selectedValue == 'fullexpansion') {
+            this.GetTreeFromREST(newInput);  
         }
 
     }
 
     ViewD3Tree(newInput: string) {
-        this.showUsedBy = false;
-        this.showFullExpansion = false;
-        DrawD3Tree("http://localhost:9080/BackEnd/app/admin/tree/" + this.selectedValue + "/" + newInput + "/"+true);
+        this.treeGridDiv = false;
+        DrawD3Tree("http://localhost:9080/BackEnd/app/admin/tree/" + this.selectedValue + "/" + newInput + "/" + true);
 
     }
-
-
-    /*GetUsedByFromREST(value: string) {
-        this.http.get('http://localhost:9080/BackEnd/app/admin/search/' + this.selectedValue + '/' + value).subscribe((data: any[]) => {
-            this.nodes = data;
-            this.dataSource = new MatTableDataSource(data);
-            this.displayedColumns = this.columnNames.map(x => x.id);
-            return data;
-        });
-
-    }*/
 
     GetTreeFromREST(value: string) {
         this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + this.selectedValue + '/' + value + '/' + false).subscribe((data: any[]) => {
-            this.TreeDataSource.data = data;
+            //this.TreeDataSource.data = data;
+            this.treeGridData = data;
         });
     }
 
-
-
-
+    ViewNodeRelation(newInput: any) {
+        this.treeGridDiv = false;
+        drawNodeGraph("http://localhost:9080/BackEnd/app/admin/NodeGraph/" + this.selectedValue + "/" + newInput);
+    }
 
     selected(event) {
         // alert(event.value);
         this.selectedValue = event.value;
-
-
     }
+
+
+
+
 }

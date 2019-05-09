@@ -1,6 +1,6 @@
 //empty the D3-tree div
-function RemoveTree(){
-    document.getElementById("D3TreeDiv").innerHTML = "";
+function RemoveD3Tree(){
+    document.getElementById("NodeGraphDiv").innerHTML = "";
 }
 
 
@@ -8,10 +8,10 @@ function RemoveTree(){
 function DrawD3Tree(searchValue) {
     alert(searchValue);
     console.log(searchValue);
-    RemoveTree();
+    RemoveD3Tree();
 
     // ************** Generate the tree diagram	 *****************
-    var margin = { top: 50, right: 10, bottom: 20, left: 10 },
+    var margin = { top: 50, right: 10, bottom: 20, left: -150 },
         width = 4000 - margin.right - margin.left,
         height = 1000 - margin.top - margin.bottom;
 
@@ -26,7 +26,7 @@ function DrawD3Tree(searchValue) {
     var diagonal = d3.svg.diagonal()
         .projection(function (d) { return [d.y, d.x]; });
 
-    var svg = d3.select(".demo")
+    var svg = d3.select(".nodeGraphClass")
         .append("svg")
         .attr("width", width + margin.right + margin.left)
         .attr("height", height + margin.top + margin.bottom)

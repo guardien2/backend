@@ -16,8 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
-
-
+import { TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
 
 
 
@@ -26,7 +25,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
         AppComponent,
         FqnNameComponent,
         SearchComponent
-
 
 
     ],
@@ -43,7 +41,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
         MatIconModule,
         MatSelectModule,
         MatInputModule,
-        MatGridListModule
+        MatGridListModule,
+        TreeGridModule
 
 
     ],
