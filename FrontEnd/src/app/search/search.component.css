@@ -1,6 +1,5 @@
 #wrapper {
      overflow: auto; /* so the size of the wrapper is alway the size of the longest content */
-
 }
 
 #typeDropDown{
