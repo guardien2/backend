@@ -12,8 +12,11 @@ public class NodeTree {
 	String fqn;
 	String fileName;
 	String name;
+	String jar;
 	
 	
+
+
 	List<NodeTree> children = new ArrayList<>();
 	List<NodeTree> parents = new ArrayList<>();
 	
@@ -23,7 +26,7 @@ public class NodeTree {
 		this.sourceFileName = n.get("sourceFileName").toString();
 		this.fqn = n.get("fqn").toString();
 		this.fileName = n.get("fileName").toString();
-		this.name = n.get("name").toString();
+		this.name = n.get("name").toString();		
 		
 	}
 	public NodeTree() {
@@ -36,7 +39,12 @@ public class NodeTree {
 	}
 	
 	
-
+	public String getJar() {
+		return jar;
+	}
+	public void setJar(String jar) {
+		this.jar = jar;
+	}
 
 	
 	public Long getId() {
