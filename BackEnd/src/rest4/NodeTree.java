@@ -9,10 +9,10 @@ public class NodeTree {
 	Long id;
 	Node node;
 	String sourceFileName;
-	String fqn;
+	String fqn = null;
 	String fileName;
 	String name;
-	String jar;
+	String jar = null;
 	
 	
 
@@ -21,13 +21,17 @@ public class NodeTree {
 	List<NodeTree> parents = new ArrayList<>();
 	
 	public NodeTree(Node n) {
+		
 		this.id = n.id();
 		this.node = n;
 		this.sourceFileName = n.get("sourceFileName").toString();
-		this.fqn = n.get("fqn").toString();
+		if(!n.get("fqn").isNull()) {
+			this.fqn = n.get("fqn").toString();	
+		}
+		
 		this.fileName = n.get("fileName").toString();
 		this.name = n.get("name").toString();		
-		
+
 	}
 	public NodeTree() {
 		this.id = 12251152L;

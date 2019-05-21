@@ -61,7 +61,8 @@ public class BuildRest {
 					+ ".*\" AND NOT a.fqn CONTAINS \"entities\"AND NOT a.fqn CONTAINS \"worksets\" "
 					+ "AND NOT a.name CONTAINS \"$\" RETURN q";
 		} else if (type.equals("crud")) {
-			cypherQuery = "MATCH q=(c:Class:CSN)-[:DECLARES]->(m:Method) WHERE upper(m.name) =~ \"(CREATE|READ|UPDATE|DELETE).*"
+			System.out.println("hej");
+			cypherQuery = "MATCH q=(a:Artifact)-[:CONTAINS]->(c:Class:CSN)-[:DECLARES]->(m:Method) WHERE upper(m.name) =~ \"(CREATE|READ|UPDATE|DELETE).*"
 					+ searchValue.toUpperCase() + ".*\" RETURN c,m,q";
 		} else if (type.equals("flowin")) {
 			// TODO
@@ -128,6 +129,8 @@ public class BuildRest {
 							NodeTree child = getNodeFromID(nodes, r.endNodeId());
 							if (nwn.getFileName().contains(".jar")) {
 								child.setJar(nwn.getFileName());
+								
+								
 							} else {
 								nwn.children.add(child);
 							}
@@ -154,7 +157,8 @@ public class BuildRest {
 							NodeTree parent = getNodeFromID(nodes, r.endNodeId());
 							System.out.println(nwn.getFileName());
 							if (nwn.getFileName().contains(".jar")) {
-								parent.setJar(nwn.fileName);
+								parent.setJar(nwn.getFileName());
+								
 							}
 
 							nwn.parents.add(parent);
@@ -239,7 +243,8 @@ public class BuildRest {
 					+ ".*\" AND NOT a.fqn CONTAINS \"entities\"AND NOT a.fqn CONTAINS \"worksets\" "
 					+ "AND NOT a.name CONTAINS \"$\" RETURN p,a,q";
 		} else if (searchType.equals("crud")) {
-			// TODO
+			cypherQuery = "MATCH q=(c:Class:CSN)-[:DECLARES]->(m:Method) "
+					+ "WHERE upper(m.name) =~ \"(CREATE|READ|UPDATE|DELETE).*" +searchValue.toUpperCase()+".*\" RETURN q";
 		} else if (searchType.equals("flowin")) {
 			// TODO
 		} else if (searchType.equals("flowout")) {
