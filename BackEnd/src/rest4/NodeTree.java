@@ -9,10 +9,10 @@ public class NodeTree {
 	Long id;
 	Node node;
 	String sourceFileName;
-	String fqn = null;
+	String fqn;
 	String fileName;
 	String name;
-	String jar = null;
+	String jar;
 	
 	
 

@@ -1,4 +1,4 @@
-package Xml;
+package RelationGen;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +19,6 @@ import org.neo4j.driver.v1.Transaction;
 import org.neo4j.driver.v1.TransactionWork;
 import org.neo4j.driver.v1.Values;
 
-
 import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.parser.CCJSqlParserUtil;
 import net.sf.jsqlparser.statement.Statement;
@@ -27,21 +26,27 @@ import net.sf.jsqlparser.util.TablesNamesFinder;
 
 
 @Path("main")
-public class XmlRelation {
+public class App {
 
 	@GET
 	@Path("update")
 	public void main() {
 		System.out.println("Getting database usage information");
 
-		boolean dataBaseGen = false;
+		boolean dataBaseGen = true;
 		boolean klientGen = true;
+		boolean etikettGen = true;
+		// Generera Etiketter
+		if(etikettGen) {
+			 sakerStallEtiketer();
+			}
+
 		// Database SQLs
 		if (dataBaseGen) {
 			List<SqlFileInfo> infoList = getDbInfo();
 			sakerStallDbKopplingar(infoList);
 		}
-
+		// Klient kopplingar
 		if (klientGen) {
 
 			List<KlientInfo> klientInfoList = getKlientInfo();
@@ -474,5 +479,46 @@ public class XmlRelation {
 		});
 		return result;
 	}
+	
+	private void sakerStallEtiketer() {
+		
+		
+		List<String> etikettCypher = new ArrayList<>();
+		
+		etikettCypher.add("MATCH (p:Class)-[:EXTENDS]->(t:Type) WHERE p.fqn CONTAINS '.server.' AND NOT p.fqn CONTAINS '.lab.' AND t.fqn = 'com.bphx.cool.Action' SET p:Server RETURN count(p)");
+		etikettCypher.add("MATCH (p:Class)-[:EXTENDS]->(t:Type) WHERE t.fqn = 'com.bphx.cool.Action' SET p:ExtendsAction RETURN count(p)");
+		
+		etikettCypher.add("MATCH (t:Type) WHERE t.fqn STARTS WITH 'se.csn.' SET t:CSN RETURN count(t)");
+		
+		
+		
+		
+		
+		System.out.println("Sätter Etiketter");
+	
+		Driver driver = GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic("neo4j", "pwd"));
+		  try ( Session session = driver.session() )
+	        {
+	            String greeting = session.writeTransaction( new TransactionWork<String>()
+	            {
+	                @Override
+	                public String execute( Transaction tx )
+	                {
+	                	for(String s : etikettCypher) {
+	                		StatementResult result = tx.run(s);
+	                		System.out.println(result.summary());
+	                		
+	          
+	                	}
+	                	System.out.println("done");
+	                    return "done";
+	                }
+	            } );
+	        }
+		
+
+	}
+	
+	
 
 }

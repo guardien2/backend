@@ -1,4 +1,4 @@
-package Xml;
+package RelationGen;
 import java.util.Map;
 
 public class KlientExitInfo {
