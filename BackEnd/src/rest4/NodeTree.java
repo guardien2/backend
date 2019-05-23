@@ -25,8 +25,14 @@ public class NodeTree {
 		this.id = n.id();
 		this.node = n;
 		this.sourceFileName = n.get("sourceFileName").toString();
+		
+		
 		if(!n.get("fqn").isNull()) {
 			this.fqn = n.get("fqn").toString();	
+		}
+		else if(!n.get("classFqn").isNull()) {
+			this.fqn = n.get("classFqn").toString();
+			
 		}
 		
 		this.fileName = n.get("fileName").toString();
@@ -34,11 +40,7 @@ public class NodeTree {
 
 	}
 	public NodeTree() {
-		this.id = 12251152L;
-		this.sourceFileName = "test";
-		this.fqn = "test";
-		this.fileName = "test";
-		this.name = "hej";
+
 		
 	}
 	

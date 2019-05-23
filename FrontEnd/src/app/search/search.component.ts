@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit {
         this.lastInput = newInput;
         RemoveD3Tree();
 
-        if (this.selectedValue == 'usedby' || this.selectedValue == 'fullexpansion' || this.selectedValue =='crud') {
+        if (this.selectedValue == 'usedby' || this.selectedValue == 'fullexpansion' || this.selectedValue =='crud' || this.selectedValue =='flowin') {
             this.GetTreeFromREST(newInput);
         }
     }

@@ -61,11 +61,12 @@ public class BuildRest {
 					+ ".*\" AND NOT a.fqn CONTAINS \"entities\"AND NOT a.fqn CONTAINS \"worksets\" "
 					+ "AND NOT a.name CONTAINS \"$\" RETURN q";
 		} else if (type.equals("crud")) {
-			System.out.println("hej");
+			System.out.println(type + " " + searchValue);
 			cypherQuery = "MATCH q=(a:Artifact)-[:CONTAINS]->(c:Class:CSN)-[:DECLARES]->(m:Method) WHERE upper(m.name) =~ \"(CREATE|READ|UPDATE|DELETE).*"
 					+ searchValue.toUpperCase() + ".*\" RETURN c,m,q";
 		} else if (type.equals("flowin")) {
-			// TODO
+			System.out.println(type + " " + searchValue);
+			cypherQuery = "match q=(c:Client) <-[:EXITS_TO]-(exit)<-[:HAS_EXIT_STATE]-(caller:Client)where c.programName=\""+searchValue.toUpperCase()+"\" return q";
 		} else if (type.equals("flowout")) {
 			// TODO
 		} else {
@@ -146,7 +147,7 @@ public class BuildRest {
 						roots.add(nwn);
 					}
 				}
-			} else if (type.equals("usedby")) {
+			} else if (type.equals("usedby" )|| type.equals("flowin")) {
 				// bygger relationerna used by
 				System.out.println("test");
 				for (NodeTree nwn : nodes) {
