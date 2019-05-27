@@ -11,16 +11,7 @@
         </mat-form-field>
     </div>
 
-    <div id="typeDropDown">
-        <mat-form-field>
-            <mat-label>Search object</mat-label>
-            <mat-select (TypeSelectionChange)="selected($event)">
-                <mat-option *ngFor="let t of types" [value]="t.value">
-                    {{t.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
+
 
     <div id="searchInput">
         <input matInput #newInput placeholder="Search for">
