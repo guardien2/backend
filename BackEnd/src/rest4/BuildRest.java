@@ -66,9 +66,9 @@ public class BuildRest {
 					+ searchValue.toUpperCase() + ".*\" RETURN c,m,q";
 		} else if (type.equals("flowin")) {
 			System.out.println(type + " " + searchValue);
-			cypherQuery = "match q=(c:Client) <-[:EXITS_TO]-(exit)<-[:HAS_EXIT_STATE]-(caller:Client)where c.programName=\""+searchValue.toUpperCase()+"\" return q";
+			cypherQuery = "match q=(c:Client) <-[:EXITS_TO]-(exit)<-[:HAS_EXIT_STATE]-(caller:Client)where upper(c.name) CONTAINS \""+searchValue.toUpperCase()+"\"return q";
 		} else if (type.equals("flowout")) {
-			// TODO
+			cypherQuery = "match q=(c:Client) <-[:EXITS_TO]-(exit)<-[:HAS_EXIT_STATE]-(caller:Client)where upper(caller.name) CONTAINS \""+searchValue.toUpperCase()+"\"return q";
 		} else {
 			// something went wrong
 			System.out.println("Se till att q finns och returneras");
@@ -112,7 +112,7 @@ public class BuildRest {
 					}
 				}
 			}
-			if (type.equals("fullexpansion") || type.equals("crud")) {
+			if (type.equals("fullexpansion") || type.equals("crud") || type.equals("flowout")) {
 				// bygger relationerna för fullexpansion
 				for (NodeTree nwn : nodes) {
 					for (Relationship r : relationshipList) {
@@ -247,9 +247,9 @@ public class BuildRest {
 			cypherQuery = "MATCH q=(c:Class:CSN)-[:DECLARES]->(m:Method) "
 					+ "WHERE upper(m.name) =~ \"(CREATE|READ|UPDATE|DELETE).*" +searchValue.toUpperCase()+".*\" RETURN q";
 		} else if (searchType.equals("flowin")) {
-			// TODO
+			cypherQuery = "match q=(c:Client) <-[:EXITS_TO]-(exit)<-[:HAS_EXIT_STATE]-(caller:Client)where upper(c.name) CONTAINS \""+searchValue.toUpperCase()+"\"return q";
 		} else if (searchType.equals("flowout")) {
-			// TODO
+			cypherQuery = "match q=(c:Client) <-[:EXITS_TO]-(exit)<-[:HAS_EXIT_STATE]-(caller:Client)where upper(caller.name) CONTAINS \""+searchValue.toUpperCase()+"\"return q";
 		} else {
 			// something went wrong
 			System.out.println("hehe xD");
