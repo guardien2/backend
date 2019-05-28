@@ -37,7 +37,6 @@ export class SearchComponent implements OnInit {
         { value: 'table', viewValue: 'Table' },
     ];
 
-    lastInput = "";
     selectedValue = "";
     treeGridDiv: boolean = true;
 
@@ -50,7 +49,6 @@ export class SearchComponent implements OnInit {
 
     searchClicked(newInput: string) {
         this.treeGridDiv = true;
-        this.lastInput = newInput;
         RemoveD3Tree();
 
         if (this.selectedValue == 'usedby' || this.selectedValue == 'fullexpansion' || this.selectedValue =='crud' || this.selectedValue =='flowin') {
@@ -60,7 +58,7 @@ export class SearchComponent implements OnInit {
 
     ViewD3Tree(newInput: string) {
         this.treeGridDiv = false;
-        DrawD3Tree("http://localhost:9080/BackEnd/app/admin/tree/" + this.selectedValue + "/" + newInput + "/" + true);
+        DrawD3Tree("http://localhost:9080/BackEnd/app/admin/graphTree/" + this.selectedValue + "/" + newInput);
 
     }
 
@@ -70,7 +68,7 @@ export class SearchComponent implements OnInit {
     }
     
     GetTreeFromREST(value: string) {
-        this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + this.selectedValue + '/' + value + '/' + false).subscribe((data: any[]) => {
+        this.http.get('http://localhost:9080/BackEnd/app/admin/tree/' + this.selectedValue + '/' + value).subscribe((data: any[]) => {
             this.treeGridData = data;
         });
     }
