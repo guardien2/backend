@@ -51,7 +51,7 @@ export class SearchComponent implements OnInit {
         this.treeGridDiv = true;
         RemoveD3Tree();
 
-        if (this.selectedValue == 'usedby' || this.selectedValue == 'fullexpansion' || this.selectedValue =='crud' || this.selectedValue =='flowin') {
+        if (this.selectedValue == 'usedby' || this.selectedValue == 'fullexpansion' || this.selectedValue =='crud' || this.selectedValue =='flowin' ||this.selectedValue =='flowout') {
             this.GetTreeFromREST(newInput);
         }
     }

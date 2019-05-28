@@ -23,7 +23,21 @@ import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.parser.CCJSqlParserUtil;
 import net.sf.jsqlparser.statement.Statement;
 import net.sf.jsqlparser.util.TablesNamesFinder;
-
+/**
+ * Denna class används för att göra olika neo4j databas genereringar av relationer och etiketter.
+ * 
+ * 
+ * 
+ * 
+ * <p>etikettGen bool sätts till true för att skapa Server,ExtendsAction och CSN ettiketer för Neo4j Databas.</p>
+ * <p>dataBaseGen bool sätts till true för att skapa databaskopplingar</p>
+ * <p>klientGen bool sätts till true för att skapa klientkopplingar</p>
+ * 
+ * <p>Databas Generering körs via API http://localhost:9080/BackEnd/app/main/update </p>
+ * 
+ * @author csn8030
+ *
+ */
 
 @Path("main")
 public class App {
@@ -32,10 +46,11 @@ public class App {
 	@Path("update")
 	public void main() {
 		System.out.println("Getting database usage information");
-
+		
+		boolean etikettGen = false;
 		boolean dataBaseGen = true;
 		boolean klientGen = true;
-		boolean etikettGen = true;
+		
 		// Generera Etiketter
 		if(etikettGen) {
 			 sakerStallEtiketer();
@@ -54,7 +69,11 @@ public class App {
 		}
 
 	}
-
+	/**
+	 * Funktion för att  hämta databasinformation
+	 * 
+	 * @return SQL-en lista med alla sql filer och information
+	 */
 	private List<SqlFileInfo> getDbInfo() {
 		List<SqlFileInfo> sql = hamtaSqlFilInfo();
 
@@ -111,7 +130,7 @@ public class App {
 	 * Skapa Operation:Db och Table:Db i tabellen för de sqlsatser som har hittats
 	 * med sina tabeller. Operationer och Tabeller som redan finns ändras ej.
 	 * 
-	 * @param infoList
+	 * @param infoList listan med sql information
 	 */
 	private void sakerStallDbKopplingar(List<SqlFileInfo> infoList) {
 
@@ -121,7 +140,7 @@ public class App {
 			try (Session session = boltDriver.session()) {
 
 				Iterator<SqlFileInfo> infoIt = infoList.iterator();
-
+				
 				// Skapa kopplingar för varje operation
 				while (infoIt.hasNext()) {
 					SqlFileInfo info = infoIt.next();
@@ -179,8 +198,10 @@ public class App {
 	}
 
 	private List<String> hittaTabellNamn(String key, String baseSql) throws JSQLParserException {
-		// Sqlparsern förstår inte except, vi är endast intresserade av tabeller så
-		// vi delar upp sql i två delar som var och en kan förstås
+		/**
+		 * Sqlparsern förstår inte except, vi är endast intresserade av tabeller så
+		 * vi delar upp sql i två delar som var och en kan förstås
+		 */
 		int exceptPos = baseSql.indexOf("except");
 		if (exceptPos > 0) {
 			String firstSql = baseSql.substring(0, exceptPos);
@@ -209,14 +230,18 @@ public class App {
 			+ " (entryNode) -[:HAS_ATTRIBUTE]->(keyNode:Attribute)," + " (entryNode) -[:HAS_LAST_CHILD]->(textEnd),"
 			+ " p=(textStart)-[:HAS_SIBLING*0..]->(textEnd)"
 			+ " return file.fileName as xmlFile , keyNode.value as sqlKey,   "
-			+ " extract ( x IN nodes(p) | x.value)  as sqlTexts"
-	// +" limit 10"
-	;
+			+ " extract ( x IN nodes(p) | x.value)  as sqlTexts";
+			//+" limit 10";
+	
+	/*if(limit10) {
+		XML_DB_MATCHES += " limit 10";
+	}*/
+	
 
 	/**
 	 * Läs information från alla XML filer som har databasoperationer
 	 * 
-	 * @return
+	 * @return result
 	 */
 	private List<SqlFileInfo> hamtaSqlFilInfo() {
 		List<SqlFileInfo> result = new ArrayList<SqlFileInfo>();
@@ -252,8 +277,8 @@ public class App {
 	 * nycklar "name" och "value", varje sådant par blir en entry i returnlistan.
 	 * Dvs {"name" -> "A", "value" -> "B"} --> {"A" -> "B"}
 	 * 
-	 * @param list
-	 * @return
+	 * @param list 
+	 * @return result		
 	 */
 	private Map<String, String> mapListTillMap(List<Map<String, Object>> list) {
 		Map<String, String> result = new HashMap<String, String>();
@@ -279,6 +304,11 @@ public class App {
 			+ "optional match (procNode)-[:HAS_ELEMENT]->(onElement {name:\"on\"})-[:HAS_ATTRIBUTE]->(onAttr)  "
 			+ "RETURN xmlFile, procAttrs, id(onElement) as id, collect(onAttr) as onAttrs";
 
+	
+/**
+	 * 
+	 * @return result lista med klientinfo 
+	 */
 	private List<KlientInfo> getKlientInfo() {
 		List<KlientInfo> result = new ArrayList<KlientInfo>();
 		System.out.println("Hämtar information om klienter");
@@ -479,7 +509,10 @@ public class App {
 		});
 		return result;
 	}
-	
+	/**
+	 * Denna Funktion skapar Server, ExtendsAction, CSN etiketer till Neo4jdatabasen
+	 * 
+	 */
 	private void sakerStallEtiketer() {
 		
 		
@@ -499,7 +532,7 @@ public class App {
 		Driver driver = GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic("neo4j", "pwd"));
 		  try ( Session session = driver.session() )
 	        {
-	            String greeting = session.writeTransaction( new TransactionWork<String>()
+	            String test = session.writeTransaction( new TransactionWork<String>()
 	            {
 	                @Override
 	                public String execute( Transaction tx )

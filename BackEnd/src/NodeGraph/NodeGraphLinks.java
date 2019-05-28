@@ -1,5 +1,15 @@
 package NodeGraph;
 
+/**
+ * NodeGraphLinks är en klass för att hålla relationer mellan två noder 
+ * 
+ * denna klass består av två long värden:
+ * source vilket är id på den första noden i relationen
+ * target vilket är id på den nod source relaterar till
+ * 
+ * @author csn8030
+ *
+ */
 public class NodeGraphLinks {
 	Long source;
 	Long target;

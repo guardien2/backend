@@ -1,7 +1,16 @@
 package NodeGraph;
 
 import org.neo4j.driver.v1.types.Node;
-
+/**
+ * Denna klass används för NodeGraph nodes listan
+ * 
+ * Just nu hämtas bara ID och name från noden.
+ * Om mer information vill visas så kan nya variabler skapas med getters and setter
+ * Ett exempel för att hämta FQN från nod "node.get("fqn").toString()."
+ * 
+ * @author csn8030
+ *
+ */
 public class NodeGraphIds {
 	Node node;
 	Long id;
