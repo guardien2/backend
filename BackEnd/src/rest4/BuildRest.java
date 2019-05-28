@@ -27,7 +27,15 @@ import NodeGraph.NodeGraph;
 import NodeGraph.NodeGraphIds;
 import NodeGraph.NodeGraphLinks;
 
-
+/**
+ * <p>Den här klassen är huvudelen av projektet, hela API:et som används av Frontend
+ * 
+ *
+ *   
+ * @author csn8029
+ * @author csn8030
+ * 
+ */
 @Path("admin")
 public class BuildRest {
 
@@ -41,6 +49,16 @@ public class BuildRest {
 		return "Hello World";
 	}
 
+	/**
+	 * 	
+	 * <h2>/app/admin/tree/{type}/{searchValu} path</h2> 
+	 * 
+	 * Skapar en trädstruktur i JSON av resultatet från databasen.
+	 * 
+	 * @param type sök-typen som det frågas efter, vilken sök-funktion som ska användas(flowin, flowout, usedby, fullexpansion eller crud). 
+	 * @param searchValue söksträngen som det ska sökas efter
+	 * @return formaterad JSON-sträng som kan visualiseras i frontend.
+	 */
 	@GET
 	@Path("tree/{type}/{searchValue}")
 	@Produces("application/json")
@@ -87,6 +105,18 @@ public class BuildRest {
 		// return "Cant Connect to DB";
 	}
 
+	/**
+	 * 
+	 * <h2>/app/admin/graphTree/{type}/{searchValu} path</h2>
+	 * 
+	 * En annan path behövs för att rita den statiska grafen, detta då JSON-strängen
+	 * behöver formateras annorlunda. Alla noder behöver visas under en gemensam root för att behålla dynamiken när
+	 * det klickas i trädet för att stänga och öppna noderna som har undernoder.
+	 * 
+	 * @param type 			Typen som det söks efter i frontend, d.v.s. vilken sök-funktion 
+	 * @param searchValue	Fritext-strängen som det söks efter ifrån frontend
+	 * @return				JSON-strängen som kan visualisera detta i frontend
+	 */
 	@GET
 	@Path("graphTree/{type}/{searchValue}")
 	@Produces("application/json")
@@ -139,6 +169,18 @@ public class BuildRest {
 		// Cannot connect to DB
 	}
 
+	/**
+	 * 
+	 * <h2>/app/admin/NodeGraph/{searchType}/{searchValu} path</h2>
+	 * 
+	 * Dena används för att rita det dynamiska trädet i frontend och används när man det kickas på "Show dynamic graph"-knappen
+	 * Den här skijler sig från dom andra två då JSON-strukturen måste skapas helt  annorlunda. Trädet har en lista med alla
+	 * noder och en annan lista vilka noder som är i relation medd varandra.
+	 * 
+	 * @param searchType 	Typen som det söks efter i frontend, d.v.s. vilken sök-funktion 
+	 * @param searchValue	Fritext-ströngen som det sök efter ifrån frontend
+	 * @return				JSON-strängen som kan visualisera detta i frontend
+	 */
 	@GET
 	@Path("NodeGraph/{searchType}/{searchValue}/")
 	@Produces("application/json")
@@ -221,6 +263,14 @@ public class BuildRest {
 		}
 	}
 
+	/**
+	 * 
+	 * Metod för att ge rätt cypher-sats, viktigt att varje sats får med Artifacterna och returnerar hela relationen q.
+	 * 
+	 * @param searchValue	Strängen som det ska sökas med
+	 * @param type			Vilken sök-funktion som ska användas 
+	 * @return				En text-sträng med en cypher-sats som kan skickas till databasen
+	 */
 	public String getCypherQuery(String searchValue, String type) {
 		String cypherQuery = "";
 
@@ -268,7 +318,15 @@ public class BuildRest {
 		return cypherQuery;
 	}
 
-	// fyller lista med noder & lista med relationer
+	
+	/**
+	 * 
+	 * Metod som tar mot ett resultat ifrån databasen och skapar två listor som medlemsvariabler i objektet ResultData,
+	 * en lista med noder {@link ResultData#nodes} och en lista med relationer {@link ResultData#relationshipList}  
+	 * 
+	 * @param result resultatet från cyphersaten som kördes till databasen
+	 * @return ResultDataobjektet som innehåller de två medlemsvariablerna nodes och relationshipList
+	 */
 	public ResultData getDataFromResult(StatementResult result) {
 		org.neo4j.driver.v1.types.Path p;
 
@@ -294,6 +352,15 @@ public class BuildRest {
 		return resultData;
 	}
 
+	
+	/**
+	 * 
+	 * Bygger relationerna alla noder har tillvarandra, sätter in noder i
+	 * {@link NodeTree#children} och {@link NodeTree#parents} utifrån relations-listan
+	 * 
+	 * @param resultData	ResultData objekt som innehåller medlemsvariabler nodes - lisa av noder och relationshipList - lista av relationer
+	 * @return 				En lista med noderna som är rötter, dvs noder som en tom parents-lista.
+	 */
 	public List<NodeTree> buildRelation(List<NodeTree> nodes, List<Relationship> relationshipList) {
 		List<NodeTree> roots = new ArrayList<>();
 
@@ -331,6 +398,17 @@ public class BuildRest {
 		return roots;
 	}
 
+	
+	/**
+	 * 
+	 * <p>Mycket liknande {@link #buildRelation(ResultData)} men bygger relationerna omvänt, d.v.s. att trädet byggs utifrån och in.
+	 * Istället för som buildRelation gör att bygga trädet inifrån och ut.</p> 
+	 * 
+	 * <p>Used by och flow in funktionerna måste byggas på det här sättet.</p> 
+	 * 
+	 * @param resultData	ResultData objekt som innehåller medlemsvariabler nodes - lisa av noder och relationshipList - lista av relationer
+	 * @return				En lista med noderna som är rötter i trädet
+	 */
 	public List<NodeTree> buildInverseRelation(List<NodeTree> nodes, List<Relationship> relationshipList) {
 		List<NodeTree> roots = new ArrayList<>();
 
@@ -371,12 +449,29 @@ public class BuildRest {
 		return roots;
 	}
 
-	// kollar om noden med ett visst ID finns i listan
+	/**
+	 * 
+	 * <p>Kollar om noden med ett specifikt ID redan finns i listan, detta då det inga duplikationer av noder för finnas i den
+	 * listan är relationerna byggs.</p>
+	 * 
+	 * <p>om noden med ett specifikt id redan finns i listan ska den inte läggas till igen.</p>
+	 * 
+	 * @param list	listan med noder som det ska kollas i
+	 * @param id	det id noden har om det redan finns i listan
+	 * @return		sant om den noden redan finns i listan, annars falskt
+	 */
 	public boolean containsNodeID(final List<NodeTree> list, final Long id) {
 		return list.stream().map(NodeTree::getId).filter(id::equals).findFirst().isPresent();
 	}
 
-	// hittar och ger noden i listan som har rï¿½tt ID
+	/**
+	 * 
+	 * Metod som letar efter en nod med ett specifikt ID i en lista av noder och returnerar hela objektet som har det ID.
+	 * 
+	 * @param list	listan som det ska letas efter
+	 * @param id	det ID noden har som vill hittas
+	 * @return		hela noden som har det ID:et
+	 */
 	public NodeTree getNodeFromID(List<NodeTree> list, Long id) {
 		for (NodeTree treeNode : list) {
 			if (treeNode.node.id() == id) {
