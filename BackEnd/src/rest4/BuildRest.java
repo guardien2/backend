@@ -38,6 +38,8 @@ import NodeGraph.NodeGraphLinks;
  */
 @Path("admin")
 public class BuildRest {
+	
+
 
 	private String uri = "bolt://localhost:7687";
 	private String user = "";
@@ -62,7 +64,7 @@ public class BuildRest {
 	@GET
 	@Path("tree/{type}/{searchValue}")
 	@Produces("application/json")
-	public String BuildTheTree(@PathParam("type") String type, @PathParam("searchValue") String searchValue) {
+	public String buildTheTree(@PathParam("type") String type, @PathParam("searchValue") String searchValue) {
 		Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
 
 		String cypherQuery = getCypherQuery(searchValue, type);
@@ -79,14 +81,14 @@ public class BuildRest {
 			ObjectMapper objectMapper = new ObjectMapper();
 
 			List<NodeTree> roots = new ArrayList<>();
-
+			
 			if (type.equals("fullexpansion") || type.equals("crud") || type.equals("flowout")) {
-
-				roots = buildRelation(resultData.nodes, resultData.relationshipList);
+				
+				roots = buildRelation(resultData);
 
 			} else if (type.equals("usedby") || type.equals("flowin")) {
 
-				roots = buildInverseRelation(resultData.nodes, resultData.relationshipList);
+				roots = buildInverseRelation(resultData);
 
 			}
 
@@ -97,12 +99,10 @@ public class BuildRest {
 			return json;
 
 		} catch (Exception e) {
-			// e.printStackTrace();
+
 			return e.toString();
 
 		}
-
-		// return "Cant Connect to DB";
 	}
 
 	/**
@@ -111,10 +111,10 @@ public class BuildRest {
 	 * 
 	 * En annan path behövs för att rita den statiska grafen, detta då JSON-strängen
 	 * behöver formateras annorlunda. Alla noder behöver visas under en gemensam root för att behålla dynamiken när
-	 * det klickas i trädet för att stänga och öppna noderna som har undernoder.
+	 * det klickas i trädet får att stänga och öppna noderna som har undernoder.
 	 * 
 	 * @param type 			Typen som det söks efter i frontend, d.v.s. vilken sök-funktion 
-	 * @param searchValue	Fritext-strängen som det söks efter ifrån frontend
+	 * @param searchValue	Fritext-strängen som det sï¿½ks efter ifrån frontend
 	 * @return				JSON-strängen som kan visualisera detta i frontend
 	 */
 	@GET
@@ -143,11 +143,11 @@ public class BuildRest {
 
 			if (type.equals("fullexpansion") || type.equals("crud") || type.equals("flowout")) {
 
-				roots = buildRelation(resultData.nodes, resultData.relationshipList);
+				roots = buildRelation(resultData);
 
 			} else if (type.equals("usedby") || type.equals("flowin")) {
 
-				roots = buildInverseRelation(resultData.nodes, resultData.relationshipList);
+				roots = buildInverseRelation(resultData);
 
 			}
 			objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -161,12 +161,11 @@ public class BuildRest {
 			return json;
 
 		} catch (Exception e) {
-			// e.printStackTrace();
+
 			return e.toString();
 
 		}
 
-		// Cannot connect to DB
 	}
 
 	/**
@@ -211,11 +210,11 @@ public class BuildRest {
 
 				for (Segment segment : p) {
 					if (!relationshipList.contains(segment.relationship())) {
-						
+
 						String start = segment.start().get("fileName").toString();
 						String end = segment.end().get("fileName").toString();
-						
-						if (!end.contains(".jar") && !start.contains(".jar")) {
+
+						if (!start.contains(".jar") && !end.contains(".jar")) {
 							relationshipList.add(segment.relationship());
 						}
 					}
@@ -280,7 +279,7 @@ public class BuildRest {
 
 			cypherQuery = "MATCH q=(a:Artifact)-[:CONTAINS]->(ab:Class:CSN)-[:DEPENDS_ON {resolved: true}]->(t:Type:CSN) <-[:CONTAINS]-(a2:Artifact)"
 					+ "WHERE upper(t.name) CONTAINS \"" + searchValue.toUpperCase()
-					+ "\" AND NOT t.name CONTAINS \"$\" " + "AND NOT ab.name CONTAINS \"$\" RETURN ab,t,q";
+					+ "\" AND NOT t.name CONTAINS \"$\" " + "AND NOT ab.name CONTAINS \"$\" RETURN q";
 
 		} else if (type.equals("fullexpansion")) {
 
@@ -296,7 +295,7 @@ public class BuildRest {
 			System.out.println(type + " " + searchValue);
 
 			cypherQuery = "MATCH q=(a:Artifact)-[:CONTAINS]->(c:Class:CSN)-[:DECLARES]->(m:Method) WHERE upper(m.name) =~ \"(CREATE|READ|UPDATE|DELETE).*"
-					+ searchValue.toUpperCase() + ".*\" RETURN c,m,q";
+					+ searchValue.toUpperCase() + ".*\" RETURN q";
 
 		} else if (type.equals("flowin")) {
 
@@ -311,7 +310,7 @@ public class BuildRest {
 					+ searchValue.toUpperCase() + "\"return q";
 
 		} else {
-			// något är galet
+			
 			System.out.println("Se till att q finns och returneras");
 		}
 
@@ -361,15 +360,15 @@ public class BuildRest {
 	 * @param resultData	ResultData objekt som innehåller medlemsvariabler nodes - lisa av noder och relationshipList - lista av relationer
 	 * @return 				En lista med noderna som är rötter, dvs noder som en tom parents-lista.
 	 */
-	public List<NodeTree> buildRelation(List<NodeTree> nodes, List<Relationship> relationshipList) {
+	public List<NodeTree> buildRelation(ResultData resultData) {
 		List<NodeTree> roots = new ArrayList<>();
 
-		for (NodeTree treeNode : nodes) {
-			for (Relationship r : relationshipList) {
+		for (NodeTree treeNode : resultData.nodes) {
+			for (Relationship r : resultData.relationshipList) {
 
 				if (treeNode.node.id() == r.endNodeId()) {
 
-					NodeTree parent = getNodeFromID(nodes, r.startNodeId());
+					NodeTree parent = getNodeFromID(resultData.nodes, r.startNodeId());
 
 					if (!parent.getFileName().contains(".jar")) {
 						treeNode.parents.add(parent);
@@ -377,7 +376,7 @@ public class BuildRest {
 				}
 
 				if (treeNode.node.id() == r.startNodeId()) {
-					NodeTree child = getNodeFromID(nodes, r.endNodeId());
+					NodeTree child = getNodeFromID(resultData.nodes, r.endNodeId());
 					if (treeNode.getFileName().contains(".jar")) {
 						child.setJar(treeNode.getFileName());
 
@@ -409,17 +408,16 @@ public class BuildRest {
 	 * @param resultData	ResultData objekt som innehåller medlemsvariabler nodes - lisa av noder och relationshipList - lista av relationer
 	 * @return				En lista med noderna som är rötter i trädet
 	 */
-	public List<NodeTree> buildInverseRelation(List<NodeTree> nodes, List<Relationship> relationshipList) {
+	public List<NodeTree> buildInverseRelation(ResultData resultData) {
 		List<NodeTree> roots = new ArrayList<>();
 
-		for (NodeTree treeNode : nodes) {
+		for (NodeTree treeNode : resultData.nodes) {
 
-			for (Relationship r : relationshipList) {
+			for (Relationship r : resultData.relationshipList) {
 
 				if (treeNode.node.id() == r.startNodeId()) {
-					NodeTree parent = getNodeFromID(nodes, r.endNodeId());
-					System.out.println(treeNode.getFileName());
-
+					NodeTree parent = getNodeFromID(resultData.nodes, r.endNodeId());
+					
 					if (treeNode.getFileName().contains(".jar")) {
 						parent.setJar(treeNode.getFileName());
 
@@ -429,7 +427,7 @@ public class BuildRest {
 				}
 
 				if (treeNode.node.id() == r.endNodeId()) {
-					NodeTree child = getNodeFromID(nodes, r.startNodeId());
+					NodeTree child = getNodeFromID(resultData.nodes, r.startNodeId());
 
 					if (!child.getFileName().contains(".jar")) {
 						treeNode.children.add(child);
