@@ -1,6 +1,12 @@
 package RelationGen;
 import java.util.Map;
 
+/**
+ * 
+ * @author Mikael Eriksson
+ *
+ */
+
 public class KlientExitInfo {
 	
 	private String exitState;

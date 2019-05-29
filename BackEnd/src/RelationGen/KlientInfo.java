@@ -2,6 +2,12 @@ package RelationGen;
 
 import java.util.Map;
 
+/**
+ * 
+ * @author Mikael Eriksson
+ *
+ */
+
 public class KlientInfo {
 	
 	private String xmlFile;

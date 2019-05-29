@@ -5,6 +5,16 @@ import java.util.List;
 
 import org.neo4j.driver.v1.types.Node;
 
+/**
+ *
+ * <h3>Klass för nod</h3>
+ * 
+ * Klassen som innehåller all data för hela noden.
+ * 
+ * @author csn8029
+ * @author csn8030
+ *
+ */
 public class NodeTree {
 	Long id;
 	Node node;
@@ -15,11 +25,17 @@ public class NodeTree {
 	String jar;
 	
 	
-
-
 	List<NodeTree> children = new ArrayList<>();
 	List<NodeTree> parents = new ArrayList<>();
 	
+	/**
+	 * 
+	 * Konstruktorn tar emot ett Neo4j-nod objekt som resterande data kan extraheras ifrån  
+	 * 
+	 * Neo4j noderna från CRUD-funktionen hade inte variabeln "fqn" utan en "classFqn". Ifall det är en sån nod skickas det datat till medlemsvariablem fqn.
+	 * 
+	 * @param n	är en Neo4j-nod
+	 */
 	public NodeTree(Node n) {
 		
 		this.id = n.id();
@@ -27,6 +43,7 @@ public class NodeTree {
 		this.sourceFileName = n.get("sourceFileName").toString();
 		
 		
+
 		if(!n.get("fqn").isNull()) {
 			this.fqn = n.get("fqn").toString();	
 		}
@@ -39,8 +56,8 @@ public class NodeTree {
 		this.name = n.get("name").toString();		
 
 	}
+	
 	public NodeTree() {
-
 		
 	}
 	
